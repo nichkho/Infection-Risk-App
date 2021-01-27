@@ -11,29 +11,20 @@ app = JupyterDash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-activities = [{'label':'Lecture', 'value':'Lecture'}, {'label':'Studying', 'value':'Studying'}, {'label':'Singing', 'value':'Singing'}, {'label':'Social Event', 'value':'Social Event'}, {'label':'Exercising', 'value':'Exercising'}]
 app.layout = html.Div([
-    html.H6("Event Information"),
-    #MAKE ROOM ID A DROP DOWN?
-    html.Div(["RoomID: ",
-              dcc.Dropdown(id='room-dropdown', value='test', options=[{'label':'hello', 'value':'hello'}])]), #placeholder rooms
-    html.Br(),
-    html.Div(["Duration of Event (min): ",
-              dcc.Input(id='time-input', value = 0, type='number')]),
-    html.Br(),
-    html.Div(["Number of Occupants: ",
-              dcc.Input(id='occupant-input', value = 0, type='number')]),
-    html.Br(),
-    html.Div(["Activity: ",
-              dcc.Dropdown(id='activity-dropdown', value ='test', options=activities)]),
-#     html.Br(),
-#     html.Button('Reset', id='reset-button'),
-    html.Br(),
-    html.Button('Go', id = 'go-button', n_clicks = 0),
-    html.Br(),
-    html.Div(id = 'calc-output', children = 'Enter values to calculate risk')
-
+    html.H2('Hello World'),
+    dcc.Dropdown(
+        id='dropdown',
+        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
+        value='LA'
+    ),
+    html.Div(id='display-value')
 ])
+
+@app.callback(dash.dependencies.Output('display-value', 'children'),
+              [dash.dependencies.Input('dropdown', 'value')])
+def display_value(value):
+    return 'You have selected "{}"'.format(value)
 
 
 if __name__ == '__main__':
