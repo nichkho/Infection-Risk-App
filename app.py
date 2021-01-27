@@ -1,8 +1,13 @@
 import os
-
+import sys
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+
+sys_path = os.path.dirname(os.getcwd())
+src_path = sys_path + "/infection_risk_calculator/src"
+sys.path.insert(1, src_path)
+from calculator import * 
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
