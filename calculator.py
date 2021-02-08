@@ -89,18 +89,13 @@ def get_room_data(filepath, room_id):
     room_dic['room_hght'] = room_hght
     
     #CFM range. If no CFM is provided min is chosen by default
-    cfm_min = room_table.loc[room_table['Room'] == room_id]['VAVmin'].item()
-    cfm_max = room_table.loc[room_table['Room'] == room_id]['VAVmax'].item()
-    
-    room_dic["cfm_min"] = float(cfm_min)
-    
-    room_dic["cfm_max"] = float(cfm_max)
-    """if isinstance(cfm_range, float):
+    cfm_range = room_table.loc[room_table['Room'] == room_id]['VAV'].item()
+    if isinstance(cfm_range, float):
         ca_requirement_cfm = .53 * room_dic['room_area']
         room_dic['cfm_range'] = [ca_requirement_cfm, ca_requirement_cfm]
         print(room_id + ' CFM rate not found. California minimum ventilation requirement imputed')
     else:
-        room_dic['cfm_range'] = list(map(int, cfm_range.split(',')))"""
+        room_dic['cfm_range'] = list(map(int, cfm_range.split(',')))
     
     #Windows
     room_dic['windows'] = room_table.loc[room_table['Room'] == room_id]['Windows'].item()
@@ -126,15 +121,13 @@ def get_quanta_emmission_rate(activity, expiratory_activity, var = var):
     return var['cv'] * var['ci'] * (var['IR'][activity] * CUBIC_M_TO_ML) * summation
       
 #Infection Risk Calculator
-def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, cfm, var = var):
+def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, var = var):
     #CFM can be boolean or number within range of cfm_range
     CUBIC_μM_TO_CUBIC_CM = 1e-12
     ERq = get_quanta_emmission_rate(activity, expiratory_activity)
     room_dic = get_room_data(room_data_path, room_id)
-    #cfm_range = room_dic['cfm_range']
-    
-    
-    
+    cfm_range = room_dic['cfm_range']
+    cfm = sum(cfm_range) / 2
     #Air Changes per Hour
     air_change_rate = get_air_changes_per_hour(cfm, room_dic['room_volume'])
     
@@ -154,14 +147,14 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     
     risk = 1 - np.e**(-var['IR'][activity] * ans)
     
-    #print('The resulting risk of infection is ' + str(risk * 100) +'%')
-    #print('It is predicted that ' + str(risk) + ' x ' + str(n_occupants) + ' = ' + str(int(risk * n_occupants)) + ' susceptible occupants will be infected')
+    print('The resulting risk of infection is ' + str(risk * 100) +'%')
+    print('It is predicted that ' + str(risk) + ' x ' + str(n_occupants) + ' = ' + str(int(risk * n_occupants)) + ' susceptible occupants will be infected')
     
     
     return risk
 
 #For user interface
-def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path, cfm_max = "max"):
+def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path):
     #Given the user inputted activity we must assume inhalation rate and expiratory activities in 
     #order to accurately provide a quantum emmission rate.
     if activity_dropdown == 'Lecture':
@@ -173,8 +166,8 @@ def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path,
         #The expiratory action is assumed to be 
         exp_act1 = 'whispering'
         exp_act2 = 'speaking'
-        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
-        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, cfm_max)
+        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path)
+        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path)
         total_ir  = (ir1 + ir2) / 2
     if activity_dropdown == 'Studying':
         #Simulate studying with average of resting/whispering and speaking/standing
@@ -182,89 +175,22 @@ def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path,
         act2 = 'standing'
         exp_act1 = 'speaking'
         exp_act2 = 'whispering'
-        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
-        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, cfm_max)
+        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path)
+        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path)
         total_ir  = (ir1 + ir2) / 2
     if activity_dropdown == 'Singing':
         #Simulate singing by assuming occupants are singing and standing
         act1 = 'standing'
         exp_act1 = 'singing'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path)
     if activity_dropdown == 'Social Event':
         #Simulate singing by assuming occupants are doing light exercise and talking
         act1 = 'light_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path)
     if activity_dropdown == 'Exercising':
         #Simulate singing by assuming occupants are doing heavy exercise and talking
         act1 = 'heavy_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path)
     return total_ir
-
-
-
-#Calculate maximum people allowed in the room given an exposure time (hours)
-#steady state model
-def calc_n_max_ss(exp_time, ax_aerosol_radius, room_area,room_height, air_exch_rate,IR,Dc,DV,mask): #exp time in hrs
-    cv = 100
-    ci = 1* 10 **(max(range(5, 10)))
-    ERq = get_quanta_emmission_rate(cv, ci, IR, Dc, Dv)
-    room_vol = room_height * room_area
-    room_vol_m = room_vol*0.0283168
-    mean_ceiling_height_m = room_height*0.3048
-    eff_aerosol_radius = ((0.4 / (1 - 0.4)) ** (1 / 3)) * max_aerosol_radius
-    sett_speed_mm = 3 * (eff_aerosol_radius / 5) ** 2 #mm/s
-    sett_speed = sett_speed_mm * 60 * 60 / 1000  # m/hr
-    viral_deact_rate = 0.3 * 0.4
-    fresh_rate = room_vol * air_exch_rate / 60
-    recirc_rate = fresh_rate * (1/0.5 - 1)
-    exhaled_air_inf = ERq * 10
-    air_filt_rate = 0.1 * recirc_rate * 60 / room_vol #have to specify which filtration we have
-    conc_relax_rate = air_exch_rate + air_filt_rate + viral_deact_rate + sett_speed / mean_ceiling_height_m
-    airb_trans_rate = ((0.5 * mask) ** 2) * exhaled_air_inf / (room_vol_m * conc_relax_rate)
-    n_max = 1 + 0.1 / (airb_trans_rate * exp_time)
-    return n_max
-
-#transient model
-def calc_n_max_t(exp_time,max_aerosol_radius, room_area,room_height, air_exch_rate,IR,Dc,DV,mask): #exp time in hrs
-    cv = 100
-    ci = 1* 10 **(max(range(5, 10)))
-    ERq = get_quanta_emmission_rate(cv, ci, IR, Dc, Dv)
-    eff_aerosol_radius = ((0.4 / (1 - 0.4)) ** (1 / 3)) * max_aerosol_radius
-    room_vol = room_height * room_area
-    room_vol_m = room_vol*0.0283168
-    mean_ceiling_height_m = room_height*0.3048
-    sett_speed_mm = 3 * (eff_aerosol_radius / 5) ** 2 #mm/s
-    sett_speed = sett_speed_mm * 60 * 60 / 1000  # m/hr
-    viral_deact_rate = 0.3 * 0.4
-    fresh_rate = room_vol * air_exch_rate / 60
-    recirc_rate = fresh_rate * (1/0.5 - 1)
-    exhaled_air_inf = ERq * 10
-    air_filt_rate = 0.1 * recirc_rate * 60 / room_vol #have to specify which filtration we have
-    conc_relax_rate = air_exch_rate + air_filt_rate + viral_deact_rate + sett_speed / mean_ceiling_height_m
-    airb_trans_rate = ((0.5 * mask) ** 2) * exhaled_air_inf / (room_vol_m * conc_relax_rate)
-    n_max = 1 + (0.1 * (1 + 1/(conc_relax_rate * exp_time)) / (airb_trans_rate * exp_time))
-    return n_max
-
-#Calculate maximum exposure time allowed given a capacity (# people):
-def calc_max_time(n_max, max_aerosol_radius, room_area,room_height, air_exch_rate,IR,Dc,DV,mask):
-    cv = 100
-    ci = 1* 10 **(max(range(5, 10)))
-    ERq = get_quanta_emmission_rate(cv, ci, IR, Dc, Dv)
-    room_vol = room_height * room_area
-    room_vol_m = room_vol*0.0283168
-    mean_ceiling_height_m = room_height*0.3048
-    eff_aerosol_radius = ((0.4 / (1 - 0.4)) ** (1 / 3)) * max_aerosol_radius
-    sett_speed_mm = 3 * (eff_aerosol_radius / 5) ** 2 #mm/s
-    sett_speed = sett_speed_mm * 60 * 60 / 1000  # m/hr
-    viral_deact_rate = 0.3 * 0.4
-    fresh_rate = room_vol * air_exch_rate / 60
-    recirc_rate = fresh_rate * (1/0.5 - 1)
-    exhaled_air_inf = ERq * 10
-    air_filt_rate = 0.1 * recirc_rate * 60 / room_vol #have to specify which filtration we have
-    conc_relax_rate = air_exch_rate + air_filt_rate + viral_deact_rate + sett_speed / mean_ceiling_height_m
-    airb_trans_rate = ((0.5 * mask) ** 2) * exhaled_air_inf / (room_vol_m * conc_relax_rate)
-    exp_time_ss = 0.1 / ((n_max - 1) * airb_trans_rate)  # hrs, steady-state
-    exp_time_trans = exp_time_ss * (1 + (1 + 4 / (conc_relax_rate * exp_time_ss)) ** 0.5) / 2  # hrs, transient
-    return exp_time_trans
