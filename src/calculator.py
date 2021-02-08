@@ -134,9 +134,18 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     #cfm_range = room_dic['cfm_range']
     
     
-    
+    if cfm == "max":
+        cfm = room_dic["cfm_max"]
+    elif cfm == "min":
+        cfm = room_dic["cfm_min"]
+    else:
+        cfm = (room_dic["cfm_max"] + room_dic["cfm_min"]) / 2 # replace using the information current
     #Air Changes per Hour
+    
     air_change_rate = get_air_changes_per_hour(cfm, room_dic['room_volume'])
+    
+    
+    
     
     ##To calculate infection rate we will aggregate the past week of testing for UC San Diego (last updated: 12/10/20)
     #Source: https://returntolearn.ucsd.edu/dashboard/index.html
@@ -154,8 +163,8 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     
     risk = 1 - np.e**(-var['IR'][activity] * ans)
     
-    #print('The resulting risk of infection is ' + str(risk * 100) +'%')
-    #print('It is predicted that ' + str(risk) + ' x ' + str(n_occupants) + ' = ' + str(int(risk * n_occupants)) + ' susceptible occupants will be infected')
+    print('The resulting risk of infection is ' + str(risk * 100) +'%')
+    print('It is predicted that ' + str(risk) + ' x ' + str(n_occupants) + ' = ' + str(int(risk * n_occupants)) + ' susceptible occupants will be infected')
     
     
     return risk
