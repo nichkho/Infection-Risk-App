@@ -53,7 +53,7 @@ app.layout = html.Div([
 def update_calc(n_clicks, activity_dropdown, room_input, time_input, occupant_input):
     if n_clicks >= 1:
         comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path)
-        total_inf = int(occupant_input * comp_ir)
+        total_inf = int(occupant_input * comp_ir) # Update return according to professor
         to_return = 'The risk of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
                                                                                                                                 time_input, 
                                                                                                                                 room_input, 
