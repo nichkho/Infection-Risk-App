@@ -126,7 +126,7 @@ def get_quanta_emmission_rate(activity, expiratory_activity, var = var):
     return var['cv'] * var['ci'] * (var['IR'][activity] * CUBIC_M_TO_ML) * summation
       
 #Infection Risk Calculator
-def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, cfm_max = "max", var = var):
+def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, cfm_max, var = var):
     #CFM can be boolean or number within range of cfm_range
     CUBIC_μM_TO_CUBIC_CM = 1e-12
     ERq = get_quanta_emmission_rate(activity, expiratory_activity)
