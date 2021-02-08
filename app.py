@@ -81,5 +81,6 @@ def update_calc(n_clicks, activity_dropdown, room_input, time_input, occupant_in
     else:
         return 'Enter Values to get risk calculation'
 
+    
 if __name__ == '__main__':
     app.run_server(debug=True)
