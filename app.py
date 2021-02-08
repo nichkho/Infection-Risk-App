@@ -33,7 +33,7 @@ app.layout = html.Div([
               dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0],options = [{'label':name, 'value':name} for name in room_names])]),
     html.Br(),
     html.Div(["VAV levels: ",
-            dcc.Dropdown(id='vav-dropdown', options = [{'label': 'test', 'value':0},{'label':'test1','value':0})]),
+            dcc.Dropdown(id='vav-dropdown', options = [{'label': 'test', 'value':0},{'label':'test1','value':0}])]),
     html.Br(),
     html.Div(["Duration of Event (min): ",
               dcc.Input(id='time-input', value = 0, type='number')]),
