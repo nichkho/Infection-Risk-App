@@ -33,7 +33,7 @@ app.layout = html.Div([
               dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0],options = [{'label':name, 'value':name} for name in room_names])]),
     html.Br(),
     html.Div(["VAV levels: ",
-             dcc.Dropdown(id='vav-dropdown')]),
+            dcc.Dropdown(id='vav-dropdown', options = activities)]),
     html.Br(),
     html.Div(["Duration of Event (min): ",
               dcc.Input(id='time-input', value = 0, type='number')]),
@@ -52,12 +52,12 @@ app.layout = html.Div([
 
 ])
 
-@app.callback(
-    dash.dependencies.Output('vav-dropdown', 'options'),
-    [dash.dependencies.Input('room-dropdown', 'value')]
-)
-def update_date_dropdown(name):
-    return [{'label': 'cfm min', 'value': vav_room[name][0]}, {'label': 'current', 'value': vav_room[name][2]}, {'label': 'cfm max', 'value': vav_room[name][1]}]
+#@app.callback(
+#    dash.dependencies.Output('vav-dropdown', 'options'),
+#    [dash.dependencies.Input('room-dropdown', 'value')]
+#)
+#def update_date_dropdown(name):
+#    return [{'label': 'cfm min', 'value': vav_room[name][0]}, {'label': 'current', 'value': vav_room[name][2]}, {'label': 'cfm max', 'value': vav_room[name][1]}]
 
 @app.callback(
     dash.dependencies.Output('calc-output', 'children'),
