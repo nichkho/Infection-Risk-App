@@ -30,7 +30,7 @@ app.layout = html.Div([
     html.H6("Event Information"),
     #MAKE ROOM ID A DROP DOWN?
     html.Div(["RoomID: ",
-              dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0], options = [{'label':name, 'value':name} for name in room_names])]),
+              dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0],options = [{'label':name, 'value':name} for name in room_names])]),
     html.Br(),
     html.Div(["VAV levels: ",
              dcc.Dropdown(id='vav-dropdown')]),
