@@ -12,7 +12,7 @@ rooms = []
 for rid in room_df['Room']:
     rooms.append({'label': rid, 'value': rid})
 
-vav_room = {}
+vav_room = {'Select...': [0,0,0]}
 index = 0
 for i in rooms['Room']:
     vav_room[i] = [rooms['VAVmin'][index], rooms['VAVmax'][index], (rooms['VAVmin'][index] + rooms['VAVmax'][index])/2]
@@ -30,7 +30,7 @@ app.layout = html.Div([
     html.H6("Event Information"),
     #MAKE ROOM ID A DROP DOWN?
     html.Div(["RoomID: ",
-              dcc.Dropdown(id='room-dropdown', options = [{'label':name, 'value':name} for name in room_names])]),
+              dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0], options = [{'label':name, 'value':name} for name in room_names])]),
     html.Br(),
     html.Div(["VAV levels: ",
              dcc.Dropdown(id='vav-dropdown')]),
