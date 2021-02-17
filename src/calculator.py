@@ -27,6 +27,7 @@ var = {
 "deposition_prob": 0.5,
 "cv": 1e9,
 "ci": 0.02,
+"mask_efficacy": {".8μm": 0.3,"1.8μm": 0.5, "3.5μm": 0.7, "5.5μm": 0.8}
 "IR": {"resting": 0.49,
        "standing": 0.54,
        "light_exercise": 1.38,
@@ -112,13 +113,22 @@ def get_room_data(filepath, room_id):
     
     return room_dic
 
-def get_quanta_emmission_rate(activity, expiratory_activity, var = var):
+def get_quanta_emmission_rate(activity, expiratory_activity, mask_tf, var = var):
     CUBIC_μM_TO_CUBIC_CM = 1e-12
     CUBIC_M_TO_ML = 1e6
     Dc = var['droplet_conc'][expiratory_activity]
     Dv = var['droplet_vol']
-    #Convert droplet volume from cubic micrometers to centimeters
-    summation = sum([Dc['.8μm'] * (Dv['.8μm'] * CUBIC_μM_TO_CUBIC_CM),
+    if mask_tf:
+       #Because of the varying quality and effectiveness in masks for the general public 
+       #we assume a conservatively low mask efficacy for smaller particles and increased
+       #efficacy for larger particles. 
+       #Source: https://doi.org/10.1016/j.ajic.2007.07.008
+        summation = sum([var['mask_efficacy']['.8μm'] * Dc['.8μm'] * (Dv['.8μm'] * CUBIC_μM_TO_CUBIC_CM),
+                     var['mask_efficacy']['1.8μm'] * Dc['1.8μm'] * (Dv['1.8μm'] * CUBIC_μM_TO_CUBIC_CM),
+                     var['mask_efficacy']['3.5μm'] * Dc['3.5μm'] * (Dv['3.5μm'] * CUBIC_μM_TO_CUBIC_CM),
+                     var['mask_efficacy']['5.5μm'] * Dc['5.5μm'] * (Dv['5.5μm'] * CUBIC_μM_TO_CUBIC_CM)])
+    else:
+        summation = sum([Dc['.8μm'] * (Dv['.8μm'] * CUBIC_μM_TO_CUBIC_CM),
                      Dc['1.8μm'] * (Dv['1.8μm'] * CUBIC_μM_TO_CUBIC_CM),
                      Dc['3.5μm'] * (Dv['3.5μm'] * CUBIC_μM_TO_CUBIC_CM),
                      Dc['5.5μm'] * (Dv['5.5μm'] * CUBIC_μM_TO_CUBIC_CM)])
@@ -126,10 +136,8 @@ def get_quanta_emmission_rate(activity, expiratory_activity, var = var):
     return var['cv'] * var['ci'] * (var['IR'][activity] * CUBIC_M_TO_ML) * summation
       
 #Infection Risk Calculator
-def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, cfm, var = var):
-    #CFM can be boolean or number within range of cfm_range
-    CUBIC_μM_TO_CUBIC_CM = 1e-12
-    ERq = get_quanta_emmission_rate(activity, expiratory_activity)
+def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, mask_tf,cfm, var = var):
+    ERq = get_quanta_emmission_rate(activity, expiratory_activity, mask_tf)
     room_dic = get_room_data(room_data_path, room_id)
     #cfm_range = room_dic['cfm_range']
     
@@ -170,7 +178,7 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     return risk
 
 #For user interface
-def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path, cfm_max = "max"):
+def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path, mask_tf, cfm_max = "max"):
     #Given the user inputted activity we must assume inhalation rate and expiratory activities in 
     #order to accurately provide a quantum emmission rate.
     if activity_dropdown == 'Lecture':
@@ -182,8 +190,8 @@ def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path,
         #The expiratory action is assumed to be 
         exp_act1 = 'whispering'
         exp_act2 = 'speaking'
-        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
-        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, cfm_max)
+        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
+        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf,cfm_max)
         total_ir  = (ir1 + ir2) / 2
     if activity_dropdown == 'Studying':
         #Simulate studying with average of resting/whispering and speaking/standing
@@ -191,24 +199,24 @@ def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path,
         act2 = 'standing'
         exp_act1 = 'speaking'
         exp_act2 = 'whispering'
-        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
-        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, cfm_max)
+        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf,cfm_max)
+        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf,cfm_max)
         total_ir  = (ir1 + ir2) / 2
     if activity_dropdown == 'Singing':
         #Simulate singing by assuming occupants are singing and standing
         act1 = 'standing'
         exp_act1 = 'singing'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf,cfm_max)
     if activity_dropdown == 'Social Event':
         #Simulate singing by assuming occupants are doing light exercise and talking
         act1 = 'light_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path,mask_tf, cfm_max)
     if activity_dropdown == 'Exercising':
         #Simulate singing by assuming occupants are doing heavy exercise and talking
         act1 = 'heavy_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf,cfm_max)
     return total_ir
 
 
