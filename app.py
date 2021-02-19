@@ -72,12 +72,13 @@ def update_date_dropdown(name):
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
     [dash.dependencies.Input('vav-dropdown', 'value')],
+    [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')]
 )
-def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, time_input, occupant_input):
+def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown,mask_input, time_input, occupant_input):
     if n_clicks >= 1:
-        comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input,True, rid_path,vav_dropdown)
+        comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input,mask_input, rid_path,vav_dropdown)
         total_inf = int(occupant_input * comp_ir)
         to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
                                                                                                                                 time_input, 
