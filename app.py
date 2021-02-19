@@ -44,7 +44,8 @@ app.layout = html.Div([
     html.Br(),
     html.Div(["Activity: ",
               dcc.Dropdown(id='activity-dropdown', value ='test', options=activities)]),
-
+#     html.Br(),
+#     html.Button('Reset', id='reset-button'),
     html.Br(),
     html.Button('Go', id = 'go-button', n_clicks = 0),
     html.Br(),
