@@ -44,8 +44,14 @@ app.layout = html.Div([
     html.Br(),
     html.Div(["Activity: ",
               dcc.Dropdown(id='activity-dropdown', value ='test', options=activities)]),
-#     html.Br(),
-#     html.Button('Reset', id='reset-button'),
+    html.Br(),
+    html.Div(["Masks: ",
+              dcc.RadioItems(id = 'masks-radio', value = 0,
+    options=[
+        {'label': 'Masks', 'value': 1},
+        {'label': 'No Masks', 'value': 0},
+    ], labelStyle={'display': 'inline-block'}
+)  ]),
     html.Br(),
     html.Button('Go', id = 'go-button', n_clicks = 0),
     html.Br(),
