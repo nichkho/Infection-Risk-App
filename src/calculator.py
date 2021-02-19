@@ -27,7 +27,7 @@ var = {
 "deposition_prob": 0.5,
 "cv": 1e9,
 "ci": 0.02,
-"mask_efficacy": {".8μm": 0.3,"1.8μm": 0.5, "3.5μm": 0.7, "5.5μm": 0.8}
+"mask_efficacy": {".8μm": 0.3,"1.8μm": 0.5, "3.5μm": 0.7, "5.5μm": 0.8},
 "IR": {"resting": 0.49,
        "standing": 0.54,
        "light_exercise": 1.38,
@@ -178,7 +178,7 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     return risk
 
 #For user interface
-def ui_calc(activity_dropdown, room_input, time_input, occupant_input, rid_path, mask_tf, cfm_max = "max"):
+def ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, cfm_max = "max"):
     #Given the user inputted activity we must assume inhalation rate and expiratory activities in 
     #order to accurately provide a quantum emmission rate.
     if activity_dropdown == 'Lecture':
