@@ -21,7 +21,6 @@ server = app.server
 activities = [{'label':'Lecture', 'value':'Lecture'}, {'label':'Studying', 'value':'Studying'}, {'label':'Singing', 'value':'Singing'}, {'label':'Social', 'value':'Social'}, {'label':'Exercising', 'value':'Exercising'}]
 app.layout = html.Div([
     html.H6("Event Information"),
-    #MAKE ROOM ID A DROP DOWN?
     html.Div(["RoomID: ",
               dcc.Dropdown(id='room-dropdown', value='test', options=rooms)]), #placeholder rooms
     html.Br(),
@@ -33,8 +32,16 @@ app.layout = html.Div([
     html.Br(),
     html.Div(["Activity: ",
               dcc.Dropdown(id='activity-dropdown', value ='test', options=activities)]),
-#     html.Br(),
-#     html.Button('Reset', id='reset-button'),
+    html.Br(),
+    html.Br(),
+    html.Div(["Masks: ",
+              dcc.RadioItems(id = 'masks-radio', value = 0,
+    options=[
+        {'label': 'Masks', 'value': 1},
+        {'label': 'No Masks', 'value': 0},
+    ], labelStyle={'display': 'inline-block'}
+)  ]),
+    html.Button('Reset', id='reset-button'),
     html.Br(),
     html.Button('Go', id = 'go-button', n_clicks = 0),
     html.Br(),
@@ -45,8 +52,10 @@ app.layout = html.Div([
 @app.callback(
     dash.dependencies.Output('calc-output', 'children'),
     [dash.dependencies.Input('go-button', 'n_clicks')],
+    [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
+    [dash.dependencies.Input('vav-dropdown', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')]
 )
