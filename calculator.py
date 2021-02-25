@@ -136,19 +136,14 @@ def get_quanta_emmission_rate(activity, expiratory_activity, mask_tf, var = var)
     return var['cv'] * var['ci'] * (var['IR'][activity] * CUBIC_M_TO_ML) * summation
       
 #Infection Risk Calculator
-def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, mask_tf,cfm, var = var):
+def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_data_path, mask_tf, var = var):
     ERq = get_quanta_emmission_rate(activity, expiratory_activity, mask_tf)
     room_dic = get_room_data(room_data_path, room_id)
-    #cfm_range = room_dic['cfm_range']
     
     
-#     if cfm == "cfm max":
-#         cfm = room_dic["cfm_max"]
-#     elif cfm == "cfm min":
-#         cfm = room_dic["cfm_min"]
-#     else:
-#         cfm = (room_dic["cfm_max"] + room_dic["cfm_min"]) / 2 # replace using the information current
-#     #Air Changes per Hour
+    
+    cfm = (room_dic["cfm_max"] + room_dic["cfm_min"]) / 2 # replace using the information current
+    #Air Changes per Hour
     
     air_change_rate = get_air_changes_per_hour(cfm, room_dic['room_volume'])
     
@@ -158,9 +153,9 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     ##To calculate infection rate we will aggregate the past week of testing for UC San Diego (last updated: 12/10/20)
     #Source: https://returntolearn.ucsd.edu/dashboard/index.html
     infection_rate = (2 + 11 + 10+ 3 + 7 + 10 + 12 + 5)/(20 + 1385 + 1375 + 286 + 1332 + 1414 + 944 + 1244)
-    n_infected = infection_rate * n_occupants
-    if n_infected < 1:
-        n_infected = 1
+    n_infected = infection_rate * n_occupants # probability of getting infected given number of occupants
+    #if n_infected < 1:
+        #n_infected = 1
     #Infectious virus removal rate
     ivrr = air_change_rate + var['deposition_rate'] + var['viral_inactivation']
     
@@ -172,13 +167,21 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     risk = 1 - np.e**(-var['IR'][activity] * ans)
     
     
+    
     return risk
 
 #For user interface
-def ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, cfm_max):
+def ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path):
+    
+    
+    
+    
+    
+    
     #Given the user inputted activity we must assume inhalation rate and expiratory activities in 
     #order to accurately provide a quantum emmission rate.
     if activity_dropdown == 'Lecture':
+        
         #Simulate lecture with average of resting/whispering and speaking/standing
         #perhaps make this information available to users by providing  a drop down that allows user to 
         #choose ratio of two actions/exp_actions during the events
@@ -187,31 +190,35 @@ def ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, 
         #The expiratory action is assumed to be 
         exp_act1 = 'whispering'
         exp_act2 = 'speaking'
-        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
-        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf,cfm_max)
+        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf)
+        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf)
         total_ir  = (ir1 + ir2) / 2
-    if activity_dropdown == 'Studying':
+    elif activity_dropdown == 'Studying':
+        
         #Simulate studying with average of resting/whispering and speaking/standing
         act1 = 'resting'
         act2 = 'standing'
         exp_act1 = 'speaking'
         exp_act2 = 'whispering'
-        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf,cfm_max)
-        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf,cfm_max)
+        ir1 = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf)
+        ir2 = infection_risk(time_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf)
         total_ir  = (ir1 + ir2) / 2
-    if activity_dropdown == 'Singing':
+    elif activity_dropdown == 'Singing':
+      
         #Simulate singing by assuming occupants are singing and standing
         act1 = 'standing'
         exp_act1 = 'singing'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf,cfm_max)
-    if activity_dropdown == 'Social Event':
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf)
+    elif activity_dropdown == 'Social':
+        
         #Simulate singing by assuming occupants are doing light exercise and talking
         act1 = 'light_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path,mask_tf, cfm_max)
-    if activity_dropdown == 'Exercising':
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf)
+    else:
         #Simulate singing by assuming occupants are doing heavy exercise and talking
+       
         act1 = 'heavy_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf,cfm_max)
+        total_ir = infection_risk(time_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf)
     return total_ir
