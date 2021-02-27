@@ -32,9 +32,9 @@ app.layout = html.Div([
     #MAKE ROOM ID A DROP DOWN?
     html.Div(["RoomID: ",
               dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0],options = [{'label':name, 'value':name} for name in room_names])]),
-#     html.Br(),
-#     html.Div(["VAV levels: ",
-#              dcc.Dropdown(id='vav-dropdown')]),
+    html.Br(),
+    html.Div(["VAV levels: ",
+             dcc.Dropdown(id='vav-dropdown')]),
     html.Br(),
     html.Div(["Duration of Event (min): ",
               dcc.Input(id='time-input', value = 0, type='number')]),
@@ -61,12 +61,12 @@ app.layout = html.Div([
 
 ])
 
-# @app.callback(
-#     dash.dependencies.Output('vav-dropdown', 'options'),
-#     [dash.dependencies.Input('room-dropdown', 'value')]
-# )
-# def update_date_dropdown(name):
-#     return [{'label': 'cfm min', 'value': "min"}, {'label': 'current', 'value': "current"}, {'label': 'cfm max', 'value': "max"}]
+@app.callback(
+    dash.dependencies.Output('vav-dropdown', 'options'),
+    [dash.dependencies.Input('room-dropdown', 'value')]
+)
+def update_date_dropdown(name):
+    return [{'label': 'cfm min', 'value': "min"}, {'label': 'current', 'value': "current"}, {'label': 'cfm max', 'value': "max"}]
 
 @app.callback(
     dash.dependencies.Output('calc-output', 'children'),
