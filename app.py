@@ -124,7 +124,7 @@ def update_calc(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value
                                                                                                                                     round((comp_ir * 100),2), 
                                                                                                                                     occupant_input,
                                                                                                                                     total_inf)
-            return to_return
+        return to_return
     else:
         return 'Enter Values to get risk estimation'
 
@@ -141,6 +141,12 @@ def update_calc(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')])
 def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
+    
+    
+    
+    
+    
+    
     if n_clicks >= 1:
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
@@ -153,7 +159,12 @@ def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask
             vav = get_vav(rid_path, room_input, vav_dropdown)
             results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
                       "vav": vav, "ir": round((ir * 100),2)})
-            return results
+        
+        
+        
+        
+        
+        return results
     return ""
 
 @app.callback(
