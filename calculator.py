@@ -147,14 +147,6 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     
     
     
-    """if cfm == "max":
-        cfm = room_dic["cfm_max"]
-    elif cfm == "min":
-        cfm = room_dic["cfm_min"]
-    elif cfm == "current":
-        cfm = (room_dic["cfm_max"] + room_dic["cfm_min"]) / 2 
-    else: 
-        cfm = float(cfm)"""
     #Air Changes per Hour
     cfm = get_vav(room_data_path, room_id, cfm)
     air_change_rate = get_air_changes_per_hour(cfm, room_dic['room_volume'])
@@ -182,7 +174,7 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     return risk
 
 #For user interface
-def ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, cfm_max = "max"):
+def ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, cfm_max):
     
     
     
