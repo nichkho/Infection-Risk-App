@@ -64,7 +64,7 @@ app.layout = html.Div([
     html.Button("Add to Visualization", id = "addvi", n_clicks = 0), 
     visdcc.Run_js(id = 'jct'), 
     html.Br(), 
-#   html.Div(id = 'return_value')
+    html.Div(id = 'return_value')
 ])
 
 @app.callback(
