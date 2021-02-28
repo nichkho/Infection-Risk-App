@@ -26,7 +26,7 @@ room_names = list(vav_room.keys())
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-external_scripts = ['event.js']
+# external_scripts = ['event.js']
 
 app = dash.Dash(__name__, external_stylesheets = external_stylesheets, external_scripts = external_scripts)
 
@@ -34,7 +34,7 @@ server = app.server
 activities = [{'label':'Lecture', 'value':'Lecture'}, {'label':'Studying', 'value':'Studying'}, {'label':'Singing', 'value':'Singing'}, {'label':'Social', 'value':'Social'}, {'label':'Exercising', 'value':'Exercising'}]
 
 
-data = pd.DataFrame()
+# data = pd.DataFrame()
 app.layout = html.Div([
     html.H6("Event Information"),
     html.Div(["RoomID: ",
@@ -64,11 +64,11 @@ app.layout = html.Div([
     html.Button('Go', id = 'go-button', n_clicks = 0),
     html.Br(),
     html.Div(id = 'calc-output', children = 'Enter values to calculate risk'), 
-    html.Button("Add to Visualization", id = "addvi", n_clicks = 0), 
-    visdcc.Run_js(id = 'jct'), 
-    html.Br(), 
-    #html.Div([dcc.Graph(id = 'vi')], style={'width': '70%', 'display': 'inline-block', 'padding': '0 20'})
-    html.Div(id = 'return_value')
+#     html.Button("Add to Visualization", id = "addvi", n_clicks = 0), 
+#     visdcc.Run_js(id = 'jct'), 
+#     html.Br(), 
+#     #html.Div([dcc.Graph(id = 'vi')], style={'width': '70%', 'display': 'inline-block', 'padding': '0 20'})
+#     html.Div(id = 'return_value')
 ])
 
 @app.callback(
@@ -102,31 +102,30 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, t
     else:
         return 'Enter Values to get risk calculation' 
    
+# @app.callback(
+#     dash.dependencies.Output('return_value', 'children'),
+#     [dash.dependencies.Input('go-button', 'n_clicks')], 
+#     [dash.dependencies.Input('activity-dropdown', 'value')],
+#     [dash.dependencies.Input('room-dropdown', 'value')],
+#     [dash.dependencies.Input('vav-dropdown', 'value')],
+#     [dash.dependencies.Input('masks-radio', 'value')],
+#     [dash.dependencies.State('time-input', 'value')],
+#     [dash.dependencies.State('occupant-input', 'value')])
+# def reval(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
+#     if n_clicks >= 1:
+#         ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+#         results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
+#                       "ir": round((ir * 100),2)})
+#         return results
+#     return ""
 
-@app.callback(
-    dash.dependencies.Output('return_value', 'children'),
-    [dash.dependencies.Input('go-button', 'n_clicks')], 
-    [dash.dependencies.Input('activity-dropdown', 'value')],
-    [dash.dependencies.Input('room-dropdown', 'value')],
-    [dash.dependencies.Input('vav-dropdown', 'value')],
-    [dash.dependencies.Input('masks-radio', 'value')],
-    [dash.dependencies.State('time-input', 'value')],
-    [dash.dependencies.State('occupant-input', 'value')])
-def reval(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
-    if n_clicks >= 1:
-        ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
-        results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
-                      "ir": round((ir * 100),2)})
-        return results
-    return ""
-
-@app.callback(
-    dash.dependencies.Output('jct', 'run'),
-    [dash.dependencies.Input('addvi', 'n_clicks')])
-def myfun(n_clicks): 
-    if n_clicks >= 1: 
-        return "message()"
-    return "console.log(0)"
+# @app.callback(
+#     dash.dependencies.Output('jct', 'run'),
+#     [dash.dependencies.Input('addvi', 'n_clicks')])
+# def myfun(n_clicks): 
+#     if n_clicks >= 1: 
+#         return "message()"
+#     return "console.log(0)"
 
 if __name__ == '__main__':
     app.run_server(debug=True)
