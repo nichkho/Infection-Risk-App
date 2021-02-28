@@ -1,6 +1,6 @@
-import plotly.express as px
+#import plotly.express as px
 import os
-import visdcc
+#import visdcc
 import sys
 import dash
 import dash_core_components as dcc
@@ -102,30 +102,7 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, t
     else:
         return 'Enter Values to get risk calculation' 
    
-# @app.callback(
-#     dash.dependencies.Output('return_value', 'children'),
-#     [dash.dependencies.Input('go-button', 'n_clicks')], 
-#     [dash.dependencies.Input('activity-dropdown', 'value')],
-#     [dash.dependencies.Input('room-dropdown', 'value')],
-#     [dash.dependencies.Input('vav-dropdown', 'value')],
-#     [dash.dependencies.Input('masks-radio', 'value')],
-#     [dash.dependencies.State('time-input', 'value')],
-#     [dash.dependencies.State('occupant-input', 'value')])
-# def reval(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
-#     if n_clicks >= 1:
-#         ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
-#         results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
-#                       "ir": round((ir * 100),2)})
-#         return results
-#     return ""
 
-# @app.callback(
-#     dash.dependencies.Output('jct', 'run'),
-#     [dash.dependencies.Input('addvi', 'n_clicks')])
-# def myfun(n_clicks): 
-#     if n_clicks >= 1: 
-#         return "message()"
-#     return "console.log(0)"
 
 if __name__ == '__main__':
     app.run_server(debug=True)
