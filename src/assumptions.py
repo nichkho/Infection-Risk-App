@@ -41,6 +41,7 @@ var = {
         'officeSpace': {'Rp': 5, 'Ra': .06, 'Od': 5},
         'libraries' : {'Rp': 5, 'Ra': .12, 'Od': 10},
         'mediaCenter':  {'Rp': 10, 'Ra': .12, 'Od': 25},
+    
         'theatre/Dance': {'Rp': 10, 'Ra': .06, 'Od': 35},
         'multiuseAssembly': {'Rp': 7.5, 'Ra': .06, 'Od': 100},
     }
