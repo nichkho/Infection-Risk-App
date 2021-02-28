@@ -73,7 +73,7 @@ def update_date_dropdown(name):
     [dash.dependencies.Input('go-button', 'n_clicks')],
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
-#     [dash.dependencies.Input('vav-dropdown', 'value')],
+    [dash.dependencies.Input('vav-dropdown', 'value')],
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')]
