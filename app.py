@@ -39,8 +39,10 @@ app.layout = html.Div([
     html.Div(["RoomID: ",
               dcc.Dropdown(id='room-dropdown', value = list(vav_room.keys())[0],options = [{'label':name, 'value':name} for name in room_names])]),
     html.Br(),
-    html.Div(["VAV levels: ",
+    html.Div(["VAV Level: ",
              dcc.Dropdown(id='vav-dropdown')]),
+    html.Br(), 
+    html.Div(["VAV Value: ", dcc.Input(id = "vav-value", value = 0, type = "text")]), 
     html.Br(),
     html.Div(["Duration of Event (min): ",
               dcc.Input(id='time-input', value = 0, type='number')]),
@@ -57,13 +59,16 @@ app.layout = html.Div([
         {'label': 'Masks', 'value': 1},
         {'label': 'No Masks', 'value': 0},
     ], labelStyle={'display': 'inline-block'})  ]),
+
     html.Br(),
     html.Button('Go', id = 'go-button', n_clicks = 0),
     html.Br(),
     html.Div(id = 'calc-output', children = 'Enter values to calculate risk'), 
+    html.Br(), 
     html.Button("Add to Visualization", id = "addvi", n_clicks = 0), 
     visdcc.Run_js(id = 'jct'), 
     html.Br(), 
+    #html.Div([dcc.Graph(id = 'vi')], style={'width': '70%', 'display': 'inline-block', 'padding': '0 20'})
     html.Div(id = 'return_value')
 ])
 
@@ -72,9 +77,9 @@ app.layout = html.Div([
     [dash.dependencies.Input('room-dropdown', 'value')]
 )
 def update_date_dropdown(name):
-        return [{'label': 'Min', 'value': "min"}, {'label': 'Average', 'value': "average"}, 
+    return [{'label': 'Min', 'value': "min"}, {'label': 'Average', 'value': "average"}, 
             {'label': 'Max', 'value': "max"}, {"label": "Custom", "value": "custom"}]
-    
+
 @app.callback(
     dash.dependencies.Output('vav-value', 'value'),
     [dash.dependencies.Input('vav-dropdown', 'value')] 
@@ -88,35 +93,34 @@ def update_vav(vselect):
         return "Average"
     else: 
         return 0
-    
+
 @app.callback(
     dash.dependencies.Output('calc-output', 'children'),
     [dash.dependencies.Input('go-button', 'n_clicks')],
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
-    [dash.dependencies.Input('vav-dropdown', 'value')], 
-    [dash.dependencies.Input('vav-value', 'value')], 
+    [dash.dependencies.Input('vav-dropdown', 'value')],
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')]
 )
-def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
-    if n_clicks >= 1: 
+def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
+    if n_clicks >= 1:
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
                 comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_value)
-        else:           
-            comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_dropdown)
-        total_inf = int(occupant_input * comp_ir)
-        to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
-                                                                                                                                time_input, 
-                                                                                                                                room_input, 
-                                                                                                                                round((comp_ir * 100),2), 
-                                                                                                                                occupant_input,
-                                                                                                                                total_inf)
-        return to_return
+        else:        
+            comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+            total_inf = int(occupant_input * comp_ir)
+            to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
+                                                                                                                                    time_input, 
+                                                                                                                                    room_input, 
+                                                                                                                                    round((comp_ir * 100),2), 
+                                                                                                                                    occupant_input,
+                                                                                                                                    total_inf)
+            return to_return
     else:
         return 'Enter Values to get risk calculation'
 
@@ -125,25 +129,24 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, vav_value,
     [dash.dependencies.Input('go-button', 'n_clicks')], 
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
-    [dash.dependencies.Input('vav-dropdown', 'value')], 
-    [dash.dependencies.Input('vav-value', 'value')],  
+    [dash.dependencies.Input('vav-dropdown', 'value')],
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')])
-def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
-    if n_clicks >= 1: 
+def reval(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
+    if n_clicks >= 1:
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
                 ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_value)
                 vav = get_vav(data_path + rid_path, room_input, vav_value)
-        else: 
-            ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_dropdown)
-            vav = get_vav(data_path + rid_path, room_input, vav_dropdown)
-        results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
-                      "vav": vav, "ir": round((ir * 100),2)})
-        return results
+        else:
+            ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+            vav = get_vav(rid_path, room_input, vav_dropdown)
+            results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
+                      "ir": round((ir * 100),2)})
+            return results
     return ""
 
 @app.callback(
