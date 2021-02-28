@@ -157,7 +157,7 @@ def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask
         else:
             ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
             vav = get_vav(rid_path, room_input, vav_dropdown)
-            results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
+        results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
                       "vav": vav, "ir": round((ir * 100),2)})
         
         
