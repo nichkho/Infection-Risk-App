@@ -99,12 +99,16 @@ def update_vav(vselect):
     [dash.dependencies.Input('go-button', 'n_clicks')],
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
-    [dash.dependencies.Input('vav-dropdown', 'value')],
-    [dash.dependencies.Input('masks-radio', 'value')],
-    [dash.dependencies.State('time-input', 'value')],
-    [dash.dependencies.State('occupant-input', 'value')]
+    [dash.dependencies.Input('vav-dropdown', 'value')], 
+    
+    
+    [dash.dependencies.Input('vav-value', 'value')], 
+    
+    [dash.dependencies.Input('masks-radio', 'value')], 
+    [dash.dependencies.State('time-input', 'value')], 
+    [dash.dependencies.State('occupant-input', 'value')] 
 )
-def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
+def update_calc(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
     if n_clicks >= 1:
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
@@ -122,18 +126,21 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, t
                                                                                                                                     total_inf)
             return to_return
     else:
-        return 'Enter Values to get risk calculation'
+        return 'Enter Values to get risk estimation'
 
 @app.callback(
     dash.dependencies.Output('return_value', 'children'),
     [dash.dependencies.Input('go-button', 'n_clicks')], 
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
-    [dash.dependencies.Input('vav-dropdown', 'value')],
+    [dash.dependencies.Input('vav-dropdown', 'value')], 
+    
+    
+    [dash.dependencies.Input('vav-value', 'value')], 
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')])
-def reval(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_input, occupant_input):
+def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
     if n_clicks >= 1:
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
@@ -145,7 +152,7 @@ def reval(n_clicks, activity_dropdown, room_input,vav_dropdown, mask_tf, time_in
             ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
             vav = get_vav(rid_path, room_input, vav_dropdown)
             results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
-                      "ir": round((ir * 100),2)})
+                      "vav": vav, "ir": round((ir * 100),2)})
             return results
     return ""
 
