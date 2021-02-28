@@ -117,13 +117,13 @@ def update_calc(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value
                 comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
         else:        
             comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
-            total_inf = int(occupant_input * comp_ir)
-            to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
+        
+        total_inf = int(occupant_input * comp_ir)
+        to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
                                                                                                                                     time_input, 
                                                                                                                                     room_input, 
                                                                                                                                     round((comp_ir * 100),2), 
-                                                                                                                                    occupant_input,
-                                                                                                                                    total_inf)
+                                                                                                                                    occupant_input,                                                                                                                                   total_inf)
         return to_return
     else:
         return 'Enter Values to get risk estimation'
