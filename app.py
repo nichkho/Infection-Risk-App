@@ -1,6 +1,6 @@
-#import plotly.express as px
+import plotly.express as px
 import os
-#import visdcc
+import visdcc
 import sys
 import dash
 import dash_core_components as dcc
