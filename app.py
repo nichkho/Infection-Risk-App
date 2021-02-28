@@ -28,7 +28,7 @@ room_names = list(vav_room.keys())
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 external_scripts = ['event.js']
 
-app = JupyterDash(__name__, external_stylesheets = external_stylesheets, external_scripts = external_scripts)
+app = dash.Dash(__name__, external_stylesheets = external_stylesheets, external_scripts = external_scripts)
 
 server = app.server
 activities = [{'label':'Lecture', 'value':'Lecture'}, {'label':'Studying', 'value':'Studying'}, {'label':'Singing', 'value':'Singing'}, {'label':'Social', 'value':'Social'}, {'label':'Exercising', 'value':'Exercising'}]
