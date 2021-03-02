@@ -1,0 +1,135 @@
+,Building,Room,Room Use (S),Area,Occupancy,occupancyImputed_TF,minCFM
+0,Mandeville Center,B202,320 - Administrative Office - Enclosed (S),3070,15.35,True,260.95
+1,Mandeville Center,B206,270 - Open Laboratory (N),1959,40.0,False,417.54
+2,Mandeville Center,B210,110 - Classroom (S),3091,158.0,False,1370.46
+3,Mandeville Center,B104,110 - Classroom (S),864,42.0,False,366.84
+4,Mandeville Center,B108,270 - Open Lab - Restricted (N),864,6.0,False,96.84
+5,Mandeville Center,B111A,310 - Academic Office - Enclosed (S),161,8.0,False,49.66
+6,Mandeville Center,B111B,310 - Academic Office - Enclosed (S),139,8.0,False,48.34
+7,Mandeville Center,B111C,310 - Academic Office - Enclosed (S),223,1.115,True,18.955
+8,Mandeville Center,B111E,310 - Academic Office - Enclosed (S),930,22.0,False,165.8
+9,Mandeville Center,B112,320 - Administrative Office - Enclosed (S),265,1.0,False,20.9
+10,Mandeville Center,B113,260 - Class Laboratory (S),719,25.0,False,379.42
+11,Mandeville Center,B115A,260 - Class Laboratory (S),953,25.0,False,421.54
+12,Mandeville Center,B115B,260 - Class Laboratory (S),953,25.0,False,421.54
+13,Mandeville Center,B118,250 - Scholarly Activity (S),1157,10.0,False,119.42
+14,Mandeville Center,B120,310 - Academic Office - Enclosed (S),224,1.0,False,18.44
+15,Mandeville Center,B122,310 - Academic Office - Enclosed (S),231,1.0,False,18.86
+16,Mandeville Center,B126,310 - Academic Office - Enclosed (S),122,1.0,False,12.32
+17,Mandeville Center,B127,310 - Academic Office - Enclosed (S),144,1.0,False,13.64
+18,Mandeville Center,B128,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+19,Mandeville Center,B129,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+20,Mandeville Center,B130,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+21,Mandeville Center,B131,310 - Academic Office - Enclosed (S),112,0.56,True,9.52
+22,Mandeville Center,B132,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+23,Mandeville Center,B133,310 - Academic Office - Enclosed (S),88,1.0,False,10.28
+24,Mandeville Center,B134,310 - Academic Office - Enclosed (S),88,1.0,False,10.28
+25,Mandeville Center,B136,310 - Academic Office - Enclosed (S),88,1.0,False,10.28
+26,Mandeville Center,B137,310 - Academic Office - Enclosed (S),88,1.0,False,10.28
+27,Mandeville Center,B138,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+28,Mandeville Center,B139,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+29,Mandeville Center,B140,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+30,Mandeville Center,B141,310 - Academic Office - Enclosed (S),112,1.0,False,11.72
+31,Mandeville Center,B142,310 - Academic Office - Enclosed (S),88,1.0,False,10.28
+32,Mandeville Center,B142,310 - Academic Office - Enclosed (S),88,1.0,False,10.28
+33,Mandeville Center,B143,310 - Academic Office - Enclosed (S),288,5.0,False,42.28
+34,Mandeville Center,B144,310 - Academic Office - Enclosed (S),53,1.0,False,8.18
+35,Mandeville Center,B144,310 - Academic Office - Enclosed (S),53,1.0,False,8.18
+36,Mandeville Center,B144,310 - Academic Office - Enclosed (S),53,1.0,False,8.18
+37,Mandeville Center,B144,310 - Academic Office - Enclosed (S),53,1.0,False,8.18
+38,Mandeville Center,B144,310 - Academic Office - Enclosed (S),55,1.0,False,8.3
+39,Mandeville Center,B146,110 - Classroom (S),483,20.0,False,178.98
+40,Mandeville Center,B150,110 - Classroom (S),1630,68.0,False,607.8
+41,Mandeville Center,B152,110 - Classroom (S),601,20.0,False,186.06
+42,Mandeville Center,B153,110 - Classroom (S),601,20.0,False,186.06
+43,Mandeville Center,B172A,320 - Administrative Office - Enclosed (S),121,0.605,True,10.285
+44,Mandeville Center,B172B,320 - Administrative Office - Enclosed (S),121,0.605,True,10.285
+45,Mandeville Center,101,660 - Exhibit (N),2480,248.0,True,2008.8
+46,Mandeville Center,101A,660 - Exhibit (N),324,32.4,True,262.44
+47,Mandeville Center,103,260 - Class Laboratory (S),748,42.0,False,554.64
+48,Mandeville Center,106,260 - Class Laboratory (S),845,25.0,False,402.1
+49,Mandeville Center,109,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
+50,Mandeville Center,110,320 - Administrative Office - Enclosed (S),144,1.0,False,13.64
+51,Mandeville Center,111,320 - Administrative Office - Enclosed (S),273,2.0,False,26.38
+52,Mandeville Center,113,340 - Conference Room (S),240,12.0,False,104.4
+53,Mandeville Center,114,320 - Administrative Office - Enclosed (S),186,1.0,False,16.16
+54,Mandeville Center,115,320 - Administrative Office - Enclosed (S),98,1.0,False,10.88
+55,Mandeville Center,116,320 - Administrative Office - Enclosed (S),104,1.0,False,11.24
+56,Mandeville Center,118,320 - Administrative Office - Enclosed (S),104,1.0,False,11.24
+57,Mandeville Center,119,320 - Administrative Office - Enclosed (S),107,1.0,False,11.42
+58,Mandeville Center,120,320 - Administrative Office - Enclosed (S),137,1.0,False,13.22
+59,Mandeville Center,121,320 - Administrative Office - Enclosed (S),196,0.98,True,16.66
+60,Mandeville Center,122,320 - Administrative Office - Enclosed (S),175,1.0,False,15.5
+61,Mandeville Center,123,320 - Administrative Office - Enclosed (S),141,1.0,False,13.46
+62,Mandeville Center,125,340 - Conference Room (S),422,20.0,False,175.32
+63,Mandeville Center,127,250 - Scholarly Activity (S),581,30.0,False,184.86
+64,Mandeville Center,129,320 - Administrative Office - Enclosed (S),155,0.775,True,13.175
+65,Mandeville Center,135,650 - Assembly (N),7770,500.0,False,4216.2
+66,Mandeville Center,201A,261 - Special Class Laboratory (S),1754,25.0,False,565.72
+67,Mandeville Center,201B,260 - Class Laboratory (S),1137,22.0,False,424.66
+68,Mandeville Center,203,270 - Open Laboratory (N),1200,24.0,False,252.0
+69,Mandeville Center,206,310 - Academic Office - Enclosed (S),223,1.0,False,18.38
+70,Mandeville Center,209,320 - Administrative Office - Enclosed (S),147,1.0,False,13.82
+71,Mandeville Center,211,320 - Administrative Office - Enclosed (S),195,1.0,False,16.7
+72,Mandeville Center,213,340 - Conference Room (S),368,16.0,False,142.07999999999996
+73,Mandeville Center,214,320 - Administrative Office - Enclosed (S),132,1.0,False,12.92
+74,Mandeville Center,216,320 - Administrative Office - Enclosed (S),340,1.0,False,25.4
+75,Mandeville Center,217,320 - Administrative Office - Enclosed (S),104,1.0,False,11.24
+76,Mandeville Center,219,261 - Special Class Laboratory (S),1200,15.0,False,366.0
+77,Mandeville Center,220A,260 - Class Laboratory (S),1372,25.0,False,496.96
+78,Mandeville Center,220B,260 - Class Laboratory (S),1637,25.0,False,544.66
+79,Mandeville Center,221,310 - Academic Office - Enclosed (S),117,1.0,False,12.02
+80,Mandeville Center,222,310 - Academic Office - Enclosed (S),118,1.0,False,12.08
+81,Mandeville Center,224,320 - Administrative Office - Enclosed (S),118,1.0,False,12.08
+82,Mandeville Center,225,320 - Administrative Office - Enclosed (S),118,1.0,False,12.08
+83,Mandeville Center,226,320 - Administrative Office - Enclosed (S),118,1.0,False,12.08
+84,Mandeville Center,227,320 - Administrative Office - Enclosed (S),118,1.0,False,12.08
+85,Mandeville Center,228,320 - Administrative Office - Enclosed (S),118,1.0,False,12.08
+86,Mandeville Center,229,320 - Administrative Office - Enclosed (S),118,1.0,False,12.08
+9,Fred N. Spiess Hall,100,210 - Research Laboratory / Studio (S),449,11.225,True,193.07
+10,Fred N. Spiess Hall,100A,211 - Research Office - Enclosed (S),121,0.605,True,10.285
+11,Fred N. Spiess Hall,100B,211 - Research Office - Enclosed (S),122,0.61,True,10.37
+12,Fred N. Spiess Hall,104,210 - Research Laboratory / Studio (S),447,11.175,True,192.20999999999998
+13,Fred N. Spiess Hall,104A,211 - Research Office - Enclosed (S),122,0.61,True,10.37
+14,Fred N. Spiess Hall,104B,211 - Research Office - Enclosed (S),124,0.62,True,10.54
+15,Fred N. Spiess Hall,106,210 - Research Laboratory / Studio (S),458,11.450000000000001,True,196.94
+16,Fred N. Spiess Hall,110,210 - Research Laboratory / Studio (S),462,11.55,True,198.66
+17,Fred N. Spiess Hall,115,210 - Research Laboratory / Studio (S),314,7.85,True,135.01999999999998
+18,Fred N. Spiess Hall,120,210 - Research Laboratory / Studio (S),600,15.0,True,258.0
+26,Fred N. Spiess Hall,206,211 - Research Office - Enclosed (S),118,0.59,True,10.03
+27,Fred N. Spiess Hall,208,310 - Academic Office - Enclosed (S),118,0.59,True,10.03
+28,Fred N. Spiess Hall,210,211 - Research Office - Enclosed (S),119,0.595,True,10.114999999999998
+29,Fred N. Spiess Hall,212,211 - Research Office - Enclosed (S),119,0.595,True,10.114999999999998
+30,Fred N. Spiess Hall,220,310 - Academic Office - Enclosed (S),169,0.8450000000000001,True,14.364999999999998
+31,Fred N. Spiess Hall,220A,310 - Academic Office - Enclosed (S),203,1.0150000000000001,True,17.255000000000003
+33,Fred N. Spiess Hall,220C,310 - Academic Office - Enclosed (S),230,1.1500000000000001,True,19.55
+41,Fred N. Spiess Hall,330,110 - Classroom (S),988,50.0,False,434.28
+45,Fred N. Spiess Hall,341,320 - Administrative Office - Enclosed (S),216,1.08,True,18.36
+46,Fred N. Spiess Hall,342,320 - Administrative Office - Enclosed (S),155,0.775,True,13.174999999999999
+48,Fred N. Spiess Hall,344,320 - Administrative Office - Enclosed (S),118,0.59,True,10.03
+49,Fred N. Spiess Hall,345,320 - Administrative Office - Enclosed (S),80,0.4,True,6.8
+50,Fred N. Spiess Hall,346,320 - Administrative Office - Enclosed (S),131,0.655,True,11.135
+51,Fred N. Spiess Hall,350,320 - Administrative Office - Enclosed (S),128,0.64,True,10.879999999999999
+52,Fred N. Spiess Hall,351,320 - Administrative Office - Open (S),872,4.36,True,74.12
+53,Fred N. Spiess Hall,352,320 - Administrative Office - Enclosed (S),126,0.63,True,10.709999999999999
+54,Fred N. Spiess Hall,354,320 - Administrative Office - Enclosed (S),163,0.8150000000000001,True,13.855
+64,Fred N. Spiess Hall,440,340 - Conference Room (S),257,10.0,False,90.42
+66,Fred N. Spiess Hall,444,310 - Academic Office - Enclosed (S),63,0.315,True,5.3549999999999995
+67,Fred N. Spiess Hall,444,310 - Academic Office - Enclosed (S),63,0.315,True,5.3549999999999995
+68,Fred N. Spiess Hall,446,320 - Administrative Office - Enclosed (S),128,0.64,True,10.879999999999999
+69,Fred N. Spiess Hall,448,310 - Academic Office - Enclosed (S),126,0.63,True,10.709999999999999
+70,Fred N. Spiess Hall,450,310 - Academic Office - Enclosed (S),61,0.305,True,5.185
+71,Fred N. Spiess Hall,450,310 - Academic Office - Enclosed (S),63,0.315,True,5.3549999999999995
+72,Fred N. Spiess Hall,451,211 - Research Office - Enclosed (S),156,0.78,True,13.26
+73,Fred N. Spiess Hall,452,310 - Academic Office - Enclosed (S),127,0.635,True,10.795
+74,Fred N. Spiess Hall,454,310 - Academic Office - Enclosed (S),226,1.1300000000000001,True,19.21
+75,Fred N. Spiess Hall,456,310 - Academic Office - Enclosed (S),182,0.9099999999999999,True,15.469999999999999
+76,Fred N. Spiess Hall,457,211 - Research Office - Open (S),239,1.1949999999999998,True,20.314999999999998
+77,Fred N. Spiess Hall,457A,310 - Academic Office - Enclosed (S),87,0.43499999999999994,True,7.395
+78,Fred N. Spiess Hall,457B,211 - Research Office - Enclosed (S),95,0.475,True,8.075
+79,Fred N. Spiess Hall,458,310 - Academic Office - Enclosed (S),180,0.8999999999999999,True,15.299999999999999
+80,Fred N. Spiess Hall,460,310 - Academic Office - Enclosed (S),90,0.44999999999999996,True,7.6499999999999995
+81,Fred N. Spiess Hall,460,310 - Academic Office - Enclosed (S),91,0.45499999999999996,True,7.734999999999999
+82,Fred N. Spiess Hall,462,310 - Academic Office - Enclosed (S),180,0.8999999999999999,True,15.299999999999999
+84,Fred N. Spiess Hall,463A,211 - Research Office - Enclosed (S),92,0.45999999999999996,True,7.819999999999999
+85,Fred N. Spiess Hall,463B,211 - Research Office - Enclosed (S),90,0.44999999999999996,True,7.6499999999999995
