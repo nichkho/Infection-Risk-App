@@ -177,8 +177,8 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     
     risk = 1 - np.e**(-var['IR'][activity] * ans)
     
-    print('The resulting risk of infection is ' + str(risk * 100) +'%')
-    print('It is predicted that ' + str(risk) + ' x ' + str(n_occupants) + ' = ' + str(int(risk * n_occupants)) + ' susceptible occupants will be infected')
+    print('It is estimated that an individual has ' + str(risk * 100) +'% chance to be infected')
+    #print('It is estimated that ' + str(risk) + ' x ' + str(n_occupants) + ' = ' + str(int(risk * n_occupants)) + ' susceptible occupants will be infected')
     
     
     return risk
