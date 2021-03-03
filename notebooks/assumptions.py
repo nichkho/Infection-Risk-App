@@ -43,5 +43,7 @@ var = {
         'mediaCenter':  {'Rp': 10, 'Ra': .12, 'Od': 25},
         'theatre/Dance': {'Rp': 10, 'Ra': .06, 'Od': 35},
         'multiuseAssembly': {'Rp': 7.5, 'Ra': .06, 'Od': 100},
+        'kitchen': {'Rp': 7.5, 'Ra': .12, 'Od': 20},
+        'gym': {'Rp': 20, 'Ra': .18, 'Od': 15},
     }
 }
