@@ -677,7 +677,7 @@
 675,Geisel Library,244-03,460 - Library Processing Room (N),85,0.425,True,7.225
 676,Geisel Library,244-04,460 - Library Processing Room (N),77,0.385,True,6.545
 677,Geisel Library,244-05,320 - Administrative Office - Enclosed (S),173,0.865,True,14.704999999999998
-678,Geisel Library,244-06,460 - Library Processing Room (N),67,0.335,True,5.694999999999999
+678,Geisel Library,244-06,460 - Library Processing Room (N),67,0.335,True,5.6949999999999985
 679,Geisel Library,244-07,460 - Library Processing Room (N),120,0.6,True,10.2
 680,Geisel Library,244-08,460 - Library Processing Room (N),96,0.48,True,8.16
 681,Geisel Library,244-09,460 - Library Processing Room (N),106,0.53,True,9.01
@@ -711,10 +711,10 @@
 709,Geisel Library,246-03,460 - Library Processing Room (N),74,0.37,True,6.289999999999999
 710,Geisel Library,246-04,460 - Library Processing Room (N),66,0.33,True,5.61
 711,Geisel Library,246-05,460 - Library Processing Room (N),66,0.33,True,5.61
-712,Geisel Library,246-06,460 - Library Processing Room (N),67,0.335,True,5.694999999999999
+712,Geisel Library,246-06,460 - Library Processing Room (N),67,0.335,True,5.6949999999999985
 713,Geisel Library,246-07,460 - Library Processing Room (N),75,0.375,True,6.375
 714,Geisel Library,246-08,460 - Library Processing Room (N),78,0.39,True,6.63
-715,Geisel Library,246-09,460 - Library Processing Room (N),67,0.335,True,5.694999999999999
+715,Geisel Library,246-09,460 - Library Processing Room (N),67,0.335,True,5.6949999999999985
 716,Geisel Library,246-10,460 - Library Processing Room (N),66,0.33,True,5.61
 717,Geisel Library,246-11,460 - Library Processing Room (N),86,0.43,True,7.31
 718,Geisel Library,246-12,460 - Library Processing Room (N),60,0.3,True,5.1
@@ -970,7 +970,7 @@
 968,Urey Hall,2226,250 - Scholarly Activity (S),236,1.18,True,20.06
 969,Urey Hall,2238,320 - Administrative Office - Enclosed (S),130,1.0,False,12.8
 970,Urey Hall,2241,210 - Research Laboratory / Studio (S),639,15.975,True,274.77
-971,Urey Hall,2242,211 - Research Office - Enclosed (S),94,0.47,True,7.9899999999999975
+971,Urey Hall,2242,211 - Research Office - Enclosed (S),94,0.47,True,7.989999999999997
 972,Urey Hall,2246,211 - Research Office - Enclosed (S),93,0.465,True,7.9049999999999985
 973,Urey Hall,2250,250 - Scholarly Activity (S),99,0.495,True,8.415
 974,Urey Hall,2254,310 - Academic Office - Enclosed (S),148,0.74,True,12.579999999999998
@@ -1298,7 +1298,7 @@
 1296,Biology Building,1111,211 - Research Office - Enclosed (S),117,0.5850000000000001,True,9.945
 1297,Biology Building,1112,211 - Research Office - Enclosed (S),93,0.465,True,7.9049999999999985
 1298,Biology Building,1113,211 - Research Office - Enclosed (S),92,0.46,True,7.8199999999999985
-1299,Biology Building,1114,211 - Research Office - Enclosed (S),94,0.47,True,7.989999999999997
+1299,Biology Building,1114,211 - Research Office - Enclosed (S),94,0.47,True,7.9899999999999975
 1300,Biology Building,1115,211 - Research Office - Open (S),157,4.0,False,29.42
 1301,Biology Building,1116,211 - Research Office - Enclosed (S),124,0.62,True,10.54
 1302,Biology Building,1117,710 - Shop - General and Research (S),181,3.62,True,68.78
@@ -1400,7 +1400,7 @@
 1398,Biology Building,2225U,210 - Research Laboratory / Studio (S),105,2.625,True,45.15
 1399,Biology Building,2225V,210 - Research Laboratory / Studio (S),129,3.225,True,55.47
 1400,Biology Building,2226,211 - Research Office - Open (S),92,0.46,True,7.8199999999999985
-1401,Biology Building,2226,211 - Research Office - Open (S),94,0.47,True,7.989999999999997
+1401,Biology Building,2226,211 - Research Office - Open (S),94,0.47,True,7.9899999999999975
 1402,Biology Building,2227,210 - Research Laboratory / Studio (S),141,3.5249999999999995,True,60.63
 1403,Biology Building,2229,210 - Research Laboratory / Studio (S),100,2.5,True,43.0
 1404,Biology Building,2230,211 - Research Office - Open (S),66,0.33,True,5.61
@@ -1826,91 +1826,381 @@
 1824,Warren Lecture Hall,2216,270 - Open Lab - Restricted (N),675,12.0,False,130.5
 1825,Warren Lecture Hall,2217A,270 - Open Lab - Restricted (N),568,10.0,False,109.08
 1826,Warren Lecture Hall,2217C,270 - Open Lab - Restricted (N),576,10.0,False,109.56
-1827,Center Hall,101,110 - Classroom (S),3428,295.0,False,2418.18
-1828,Center Hall,105,110 - Classroom (S),1622,146.0,False,1192.32
-1829,Center Hall,109,110 - Classroom (S),1644,147.0,False,1201.14
-1830,Center Hall,113,110 - Classroom (S),1619,146.0,False,1192.14
-1831,Center Hall,115,110 - Classroom (S),2143,196.0,False,1598.58
-1832,Center Hall,119,110 - Classroom (S),2144,196.0,False,1598.64
-1833,Center Hall,201,110 - Classroom (S),454,30.0,False,252.24
-1834,Center Hall,202,110 - Classroom (S),255,15.0,False,127.8
-1835,Center Hall,203,110 - Classroom (S),409,32.0,False,264.54
-1836,Center Hall,204,110 - Classroom (S),316,16.0,False,138.96
-1837,Center Hall,205,110 - Classroom (S),500,30.0,False,255.0
-1838,Center Hall,206,110 - Classroom (S),316,16.0,False,138.96
-1839,Center Hall,207,110 - Classroom (S),415,32.0,False,264.9
-1840,Center Hall,208,110 - Classroom (S),257,15.0,False,127.92
-1841,Center Hall,212,110 - Classroom (S),1774,146.0,False,1201.44
-1842,Center Hall,214,110 - Classroom (S),1773,146.0,False,1201.38
-1843,Center Hall,216,110 - Classroom (S),1776,146.0,False,1201.56
-1844,Center Hall,217A,110 - Classroom (S),482,35.0,False,291.42
-1845,Center Hall,217B,110 - Classroom (S),424,35.0,False,287.94
-1846,Center Hall,218,110 - Classroom (S),463,32.0,False,267.78
-1847,Center Hall,220,110 - Classroom (S),408,32.0,False,264.48
-1848,Center Hall,222,110 - Classroom (S),813,65.0,False,536.28
-1849,Center Hall,223,110 - Classroom (S),323,15.0,False,131.88
-1850,Center Hall,224A,110 - Classroom (S),278,15.0,False,129.18
-1851,Center Hall,224B,110 - Classroom (S),364,15.0,False,134.34
-1852,Center Hall,224C,110 - Classroom (S),294,15.0,False,130.14
-1853,Center Hall,301,320 - Administrative Office - Enclosed (S),161,1.0,False,14.66
-1854,Center Hall,302,340 - Conference Room (S),140,4.0,False,38.4
-1855,Center Hall,303,320 - Administrative Office - Enclosed (S),106,1.0,False,11.36
-1856,Center Hall,304,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
-1857,Center Hall,305,320 - Administrative Office - Enclosed (S),188,1.0,False,16.28
-1858,Center Hall,306,340 - Conference Room (S),324,18.0,False,154.44
-1859,Center Hall,309A,320 - Administrative Office - Enclosed (S),66,1.0,False,8.96
-1860,Center Hall,310,320 - Administrative Office - Enclosed (S),188,1.0,False,16.28
-1861,Center Hall,311,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
-1862,Center Hall,312,320 - Administrative Office - Enclosed (S),106,1.0,False,11.36
-1863,Center Hall,315,340 - Conference Room (S),1146,26.0,False,263.76
-1864,Center Hall,316,470 - Tutorial / Training Room (N),540,25.0,False,219.9
-1865,Center Hall,317,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
-1866,Center Hall,318,470 - Tutorial / Training Room (N),65,2.0,False,18.9
-1867,Center Hall,319,320 - Administrative Office - Enclosed (S),99,1.0,False,10.94
-1868,Center Hall,320,340 - Conference Room (S),72,1.0,False,11.82
-1869,Center Hall,321,470 - Tutorial / Training Room (N),77,3.0,False,27.12
-1870,Center Hall,322,470 - Tutorial / Training Room (N),77,3.0,False,27.12
-1871,Center Hall,323,470 - Tutorial / Training Room (N),72,1.0,False,11.82
-1872,Center Hall,324,320 - Administrative Office - Enclosed (S),92,1.0,False,10.52
-1873,Center Hall,325,320 - Administrative Office - Enclosed (S),72,1.0,False,9.32
-1874,Center Hall,326,320 - Administrative Office - Enclosed (S),77,1.0,False,9.62
-1875,Center Hall,327,320 - Administrative Office - Enclosed (S),77,1.0,False,9.62
-1876,Center Hall,328,320 - Administrative Office - Enclosed (S),155,1.0,False,14.3
-1877,Center Hall,329,320 - Administrative Office - Enclosed (S),120,0.6,True,10.2
-1878,Center Hall,330,470 - Tutorial / Training Room (N),185,12.0,False,101.1
-1879,Center Hall,331,320 - Administrative Office - Open (S),59,0.295,True,5.015
-1880,Center Hall,333,340 - Conference Room (S),489,45.0,False,366.84
-1881,Center Hall,334,340 - Conference Room (S),122,6.0,False,52.32
-1882,Center Hall,335,340 - Conference Room (S),99,6.0,False,50.94
-1883,Center Hall,339,340 - Conference Room (S),367,35.0,False,284.52
-1884,Center Hall,344,320 - Administrative Office - Enclosed (S),95,1.0,False,10.7
-1885,Center Hall,346,320 - Administrative Office - Enclosed (S),101,1.0,False,11.06
-1886,Center Hall,348,320 - Administrative Office - Enclosed (S),175,1.0,False,15.5
-1887,Center Hall,349,320 - Administrative Office - Enclosed (S),101,1.0,False,11.06
-1888,Center Hall,350,320 - Administrative Office - Enclosed (S),95,1.0,False,10.7
-1889,Center Hall,351,320 - Administrative Office - Enclosed (S),187,0.935,True,15.895
-1890,Center Hall,354,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
-1891,Center Hall,356,340 - Conference Room (S),360,25.0,False,209.1
-1892,Center Hall,357,320 - Administrative Office - Enclosed (S),108,1.0,False,11.48
-1893,Center Hall,359,320 - Administrative Office - Enclosed (S),75,1.0,False,9.5
-1894,Center Hall,360,340 - Conference Room (S),195,15.0,False,124.2
-1895,Center Hall,361,340 - Conference Room (S),380,25.0,False,210.3
-1896,Center Hall,362,340 - Conference Room (S),65,3.0,False,26.4
-1897,Center Hall,364,340 - Conference Room (S),73,3.0,False,26.88
-1898,Center Hall,365,340 - Conference Room (S),70,3.0,False,26.7
-1899,Center Hall,366,340 - Conference Room (S),65,3.0,False,26.4
-1900,Center Hall,367,340 - Conference Room (S),74,3.0,False,26.94
-1901,Center Hall,368,340 - Conference Room (S),356,25.0,False,208.86
-1902,Center Hall,369,320 - Administrative Office - Enclosed (S),76,1.0,False,9.56
-1903,Center Hall,370,320 - Administrative Office - Enclosed (S),108,1.0,False,11.48
-1904,Center Hall,371,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
-1905,Center Hall,373,320 - Administrative Office - Enclosed (S),91,2.0,False,15.46
-1906,Center Hall,374,340 - Conference Room (S),81,4.0,False,34.86
-1907,Center Hall,375,340 - Conference Room (S),72,4.0,False,34.32
-1908,Center Hall,376,320 - Administrative Office - Enclosed (S),103,2.0,False,16.18
-1909,Center Hall,377,340 - Conference Room (S),108,1.0,False,13.98
-1910,Center Hall,378,340 - Conference Room (S),195,15.0,False,124.2
-1911,Center Hall,382A,320 - Administrative Office - Enclosed (S),82,0.41,True,6.9700000000000015
+1827,Computer Science and Engineering Building,B210,270 - Open Laboratory (N),1402,38.0,False,369.12
+1828,Computer Science and Engineering Building,B215,250 - Scholarly Activity (S),137,8.0,False,48.22
+1829,Computer Science and Engineering Building,B220,270 - Open Lab - Restricted (N),1170,38.0,False,355.2
+1830,Computer Science and Engineering Building,B225,250 - Scholarly Activity (S),450,25.0,False,152.0
+1831,Computer Science and Engineering Building,B230,270 - Open Lab - Restricted (N),1595,42.0,False,410.7
+1832,Computer Science and Engineering Building,B240,270 - Open Lab - Restricted (N),1621,48.0,False,457.26
+1833,Computer Science and Engineering Building,B240A,250 - Scholarly Activity (S),135,8.0,False,48.1
+1834,Computer Science and Engineering Building,B250,270 - Open Lab - Restricted (N),1646,48.0,False,458.76
+1835,Computer Science and Engineering Building,B250A,250 - Scholarly Activity (S),133,8.0,False,47.98
+1836,Computer Science and Engineering Building,B260,270 - Open Lab - Restricted (N),1600,48.0,False,456.0
+1837,Computer Science and Engineering Building,B260A,250 - Scholarly Activity (S),132,8.0,False,47.92
+1838,Computer Science and Engineering Building,B270,270 - Open Lab - Restricted (N),1677,48.0,False,460.62
+1839,Computer Science and Engineering Building,B275,250 - Scholarly Activity (S),155,8.0,False,49.3
+1840,Computer Science and Engineering Building,1102,320 - Administrative Office - Enclosed (S),213,1.0,False,17.78
+1841,Computer Science and Engineering Building,1104,320 - Administrative Office - Enclosed (S),247,1.0,False,19.82
+1842,Computer Science and Engineering Building,1106,310 - Academic Office - Enclosed (S),143,1.0,False,13.58
+1843,Computer Science and Engineering Building,1107,320 - Administrative Office - Enclosed (S),126,0.63,True,10.71
+1844,Computer Science and Engineering Building,1108,320 - Administrative Office - Enclosed (S),120,1.0,False,12.2
+1845,Computer Science and Engineering Building,1109,310 - Academic Office - Enclosed (S),125,2.0,False,17.5
+1846,Computer Science and Engineering Building,1110,310 - Academic Office - Enclosed (S),150,1.0,False,14.0
+1847,Computer Science and Engineering Building,1111,310 - Academic Office - Enclosed (S),127,2.0,False,17.62
+1848,Computer Science and Engineering Building,1112,310 - Academic Office - Enclosed (S),126,1.0,False,12.56
+1849,Computer Science and Engineering Building,1113,340 - Conference Room (S),351,12.0,False,111.06
+1850,Computer Science and Engineering Building,1114,310 - Academic Office - Enclosed (S),121,1.0,False,12.26
+1851,Computer Science and Engineering Building,1115,340 - Conference Room (S),297,12.0,False,107.82
+1852,Computer Science and Engineering Building,1116,310 - Academic Office - Enclosed (S),109,1.0,False,11.54
+1853,Computer Science and Engineering Building,1117,340 - Conference Room (S),500,16.0,False,150.0
+1854,Computer Science and Engineering Building,1118,320 - Administrative Office - Enclosed (S),109,1.0,False,11.54
+1855,Computer Science and Engineering Building,1120,340 - Conference Room (S),103,6.0,False,51.18
+1856,Computer Science and Engineering Building,1124,310 - Academic Office - Enclosed (S),934,16.0,False,136.04
+1857,Computer Science and Engineering Building,1124A,310 - Academic Office - Enclosed (S),37,0.185,True,3.145
+1858,Computer Science and Engineering Building,1125,340 - Conference Room (S),199,8.0,False,71.94
+1859,Computer Science and Engineering Building,1130,410 - Study Room (N),867,4.335,True,73.695
+1860,Computer Science and Engineering Building,1132,320 - Administrative Office - Enclosed (S),146,1.0,False,13.76
+1861,Computer Science and Engineering Building,1133,320 - Administrative Office - Enclosed (S),122,1.0,False,12.32
+1862,Computer Science and Engineering Building,1134,320 - Administrative Office - Enclosed (S),128,1.0,False,12.68
+1863,Computer Science and Engineering Building,1135,320 - Administrative Office - Enclosed (S),123,1.0,False,12.38
+1864,Computer Science and Engineering Building,1136,320 - Administrative Office - Enclosed (S),126,1.0,False,12.56
+1865,Computer Science and Engineering Building,1137,320 - Administrative Office - Enclosed (S),247,1.0,False,19.82
+1866,Computer Science and Engineering Building,1137B,320 - Administrative Office - Enclosed (S),166,3.0,False,24.96
+1867,Computer Science and Engineering Building,1138,320 - Administrative Office - Enclosed (S),128,1.0,False,12.68
+1868,Computer Science and Engineering Building,1139,320 - Administrative Office - Enclosed (S),125,3.0,False,22.5
+1869,Computer Science and Engineering Building,1140,320 - Administrative Office - Enclosed (S),126,1.0,False,12.56
+1870,Computer Science and Engineering Building,1142,320 - Administrative Office - Enclosed (S),128,1.0,False,12.68
+1871,Computer Science and Engineering Building,1144,320 - Administrative Office - Enclosed (S),126,1.0,False,12.56
+1872,Computer Science and Engineering Building,1145,320 - Administrative Office - Enclosed (S),127,1.0,False,12.62
+1873,Computer Science and Engineering Building,1146,320 - Administrative Office - Enclosed (S),125,1.0,False,12.5
+1874,Computer Science and Engineering Building,1148,320 - Administrative Office - Enclosed (S),125,1.0,False,12.5
+1875,Computer Science and Engineering Building,1149,320 - Administrative Office - Enclosed (S),196,2.0,False,21.76
+1876,Computer Science and Engineering Building,1150,320 - Administrative Office - Enclosed (S),124,1.0,False,12.44
+1877,Computer Science and Engineering Building,1151,320 - Administrative Office - Enclosed (S),127,1.0,False,12.62
+1878,Computer Science and Engineering Building,1152,320 - Administrative Office - Enclosed (S),151,1.0,False,14.06
+1879,Computer Science and Engineering Building,1154,320 - Administrative Office - Enclosed (S),125,1.0,False,12.5
+1880,Computer Science and Engineering Building,1156,320 - Administrative Office - Enclosed (S),125,1.0,False,12.5
+1881,Computer Science and Engineering Building,1158,320 - Administrative Office - Enclosed (S),125,1.0,False,12.5
+1882,Computer Science and Engineering Building,1202,340 - Conference Room (S),1776,100.0,False,856.56
+1883,Computer Science and Engineering Building,1210,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1884,Computer Science and Engineering Building,1212,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1885,Computer Science and Engineering Building,1214,320 - Administrative Office - Enclosed (S),133,2.0,False,17.98
+1886,Computer Science and Engineering Building,1216,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1887,Computer Science and Engineering Building,1218,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1888,Computer Science and Engineering Building,1220,320 - Administrative Office - Enclosed (S),133,1.0,False,12.98
+1889,Computer Science and Engineering Building,1222,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1890,Computer Science and Engineering Building,1223,340 - Conference Room (S),223,10.0,False,88.38
+1891,Computer Science and Engineering Building,1224,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1892,Computer Science and Engineering Building,1225,320 - Administrative Office - Enclosed (S),140,2.0,False,18.4
+1893,Computer Science and Engineering Building,1226,320 - Administrative Office - Enclosed (S),133,1.0,False,12.98
+1894,Computer Science and Engineering Building,1228,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1895,Computer Science and Engineering Building,1229,320 - Administrative Office - Enclosed (S),165,1.0,False,14.9
+1896,Computer Science and Engineering Building,1230,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1897,Computer Science and Engineering Building,1232,320 - Administrative Office - Enclosed (S),133,1.0,False,12.98
+1898,Computer Science and Engineering Building,1234,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1899,Computer Science and Engineering Building,1236,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1900,Computer Science and Engineering Building,1238,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
+1901,Computer Science and Engineering Building,1231,320 - Administrative Office - Enclosed (S),176,6.0,False,40.56
+1902,Computer Science and Engineering Building,2108,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1903,Computer Science and Engineering Building,2109,340 - Conference Room (S),345,14.0,False,125.7
+1904,Computer Science and Engineering Building,2110,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1905,Computer Science and Engineering Building,2112,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1906,Computer Science and Engineering Building,2114,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1907,Computer Science and Engineering Building,2115,210 - Research Laboratory / Studio (S),182,8.0,False,112.76
+1908,Computer Science and Engineering Building,2115,210 - Research Laboratory / Studio (S),183,8.0,False,112.94
+1909,Computer Science and Engineering Building,2116,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1910,Computer Science and Engineering Building,2118,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1911,Computer Science and Engineering Building,2119,250 - Scholarly Activity (S),567,13.0,False,99.02
+1912,Computer Science and Engineering Building,2120,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1913,Computer Science and Engineering Building,2123,210 - Research Laboratory / Studio (S),408,6.0,False,133.44
+1914,Computer Science and Engineering Building,2126,310 - Academic Office - Enclosed (S),138,1.0,False,13.28
+1915,Computer Science and Engineering Building,2127,210 - Research Laboratory / Studio (S),752,6.0,False,195.36
+1916,Computer Science and Engineering Building,2130,310 - Academic Office - Enclosed (S),149,1.0,False,13.94
+1917,Computer Science and Engineering Building,2134,310 - Academic Office - Enclosed (S),143,1.0,False,13.58
+1918,Computer Science and Engineering Building,2138,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+1919,Computer Science and Engineering Building,2154,250 - Scholarly Activity (S),827,31.0,False,204.62
+1920,Computer Science and Engineering Building,2202,310 - Academic Office - Enclosed (S),143,1.0,False,13.58
+1921,Computer Science and Engineering Building,2208,320 - Administrative Office - Enclosed (S),136,1.0,False,13.16
+1922,Computer Science and Engineering Building,2209,210 - Research Laboratory / Studio (S),580,6.0,False,164.39999999999995
+1923,Computer Science and Engineering Building,2213,250 - Scholarly Activity (S),646,44.0,False,258.76
+1924,Computer Science and Engineering Building,2214,320 - Administrative Office - Enclosed (S),136,1.0,False,13.16
+1925,Computer Science and Engineering Building,2216,320 - Administrative Office - Enclosed (S),136,1.0,False,13.16
+1926,Computer Science and Engineering Building,2217,340 - Conference Room (S),353,14.0,False,126.18
+1927,Computer Science and Engineering Building,2218,320 - Administrative Office - Enclosed (S),136,1.0,False,13.16
+1928,Computer Science and Engineering Building,2219,210 - Research Laboratory / Studio (S),241,6.0,False,103.38
+1929,Computer Science and Engineering Building,2220,320 - Administrative Office - Enclosed (S),136,1.0,False,13.16
+1930,Computer Science and Engineering Building,2221,210 - Research Laboratory / Studio (S),134,2.0,False,44.12
+1931,Computer Science and Engineering Building,2222,320 - Administrative Office - Enclosed (S),136,1.0,False,13.16
+1932,Computer Science and Engineering Building,2224,250 - Scholarly Activity (S),136,6.0,False,38.16
+1933,Computer Science and Engineering Building,2225,320 - Administrative Office - Enclosed (S),254,2.0,False,25.24
+1934,Computer Science and Engineering Building,2226,250 - Scholarly Activity (S),136,6.0,False,38.16
+1935,Computer Science and Engineering Building,2228,250 - Scholarly Activity (S),130,8.0,False,47.8
+1936,Computer Science and Engineering Building,2231,340 - Conference Room (S),376,14.0,False,127.56
+1937,Computer Science and Engineering Building,2237,320 - Administrative Office - Enclosed (S),174,0.8699999999999999,True,14.79
+1938,Computer Science and Engineering Building,2244,320 - Administrative Office - Enclosed (S),132,1.0,False,12.92
+1939,Computer Science and Engineering Building,2246,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
+1940,Computer Science and Engineering Building,2248,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
+1941,Computer Science and Engineering Building,2250,320 - Administrative Office - Enclosed (S),132,1.0,False,12.92
+1942,Computer Science and Engineering Building,2252,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
+1943,Computer Science and Engineering Building,2254,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
+1944,Computer Science and Engineering Building,2256,320 - Administrative Office - Enclosed (S),132,1.0,False,12.92
+1945,Computer Science and Engineering Building,2258,320 - Administrative Office - Enclosed (S),139,1.0,False,13.34
+1946,Computer Science and Engineering Building,2260,320 - Administrative Office - Enclosed (S),169,1.0,False,15.14
+1947,Computer Science and Engineering Building,2262,320 - Administrative Office - Enclosed (S),169,1.0,False,15.14
+1948,Computer Science and Engineering Building,2264,320 - Administrative Office - Enclosed (S),130,1.0,False,12.8
+1949,Computer Science and Engineering Building,2268,320 - Administrative Office - Enclosed (S),135,1.0,False,13.1
+1950,Computer Science and Engineering Building,2270,320 - Administrative Office - Enclosed (S),142,1.0,False,13.52
+1951,Computer Science and Engineering Building,2272,320 - Administrative Office - Enclosed (S),142,1.0,False,13.52
+1952,Computer Science and Engineering Building,2274,320 - Administrative Office - Enclosed (S),129,1.0,False,12.739999999999998
+1953,Computer Science and Engineering Building,2266,320 - Administrative Office - Enclosed (S),287,1.0,False,22.22
+1954,Computer Science and Engineering Building,2102,310 - Academic Office - Enclosed (S),139,1.0,False,13.34
+1955,Computer Science and Engineering Building,2204,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+1956,Computer Science and Engineering Building,2140,211 - Research Office - Enclosed (S),872,12.0,False,112.32
+1957,Computer Science and Engineering Building,2142,211 - Research Office - Enclosed (S),488,6.0,False,59.28
+1958,Computer Science and Engineering Building,2144,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+1959,Computer Science and Engineering Building,2146,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+1960,Computer Science and Engineering Building,2148,211 - Research Office - Enclosed (S),459,8.0,False,67.53999999999999
+1961,Computer Science and Engineering Building,2150,211 - Research Office - Enclosed (S),559,7.0,False,68.53999999999999
+1962,Computer Science and Engineering Building,2232,211 - Research Office - Enclosed (S),389,6.0,False,53.34
+1963,Computer Science and Engineering Building,2234,211 - Research Office - Enclosed (S),411,6.0,False,54.66
+1964,Computer Science and Engineering Building,2236,211 - Research Office - Enclosed (S),389,10.0,False,73.34
+1965,Computer Science and Engineering Building,2238,211 - Research Office - Enclosed (S),273,7.0,False,51.38
+1966,Computer Science and Engineering Building,2128,310 - Academic Office - Enclosed (S),133,2.0,False,17.98
+1967,Computer Science and Engineering Building,2132,310 - Academic Office - Enclosed (S),135,2.0,False,18.1
+1968,Computer Science and Engineering Building,2211,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+1969,Computer Science and Engineering Building,2240,320 - Administrative Office - Enclosed (S),114,2.0,False,16.84
+1970,Computer Science and Engineering Building,2104,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1971,Computer Science and Engineering Building,2106,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1972,Computer Science and Engineering Building,2122,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+1973,Computer Science and Engineering Building,2124,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+1974,Computer Science and Engineering Building,2206,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+1975,Computer Science and Engineering Building,2210,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+1976,Computer Science and Engineering Building,2212,320 - Administrative Office - Enclosed (S),136,2.0,False,18.16
+1977,Computer Science and Engineering Building,2136,310 - Academic Office - Enclosed (S),133,2.0,False,17.98
+1978,Computer Science and Engineering Building,3102,310 - Academic Office - Enclosed (S),139,1.0,False,13.34
+1979,Computer Science and Engineering Building,3104,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1980,Computer Science and Engineering Building,3106,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1981,Computer Science and Engineering Building,3108,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1982,Computer Science and Engineering Building,3109,340 - Conference Room (S),345,14.0,False,125.7
+1983,Computer Science and Engineering Building,3110,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1984,Computer Science and Engineering Building,3111,210 - Research Laboratory / Studio (S),133,4.0,False,63.94
+1985,Computer Science and Engineering Building,3112,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1986,Computer Science and Engineering Building,3114,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1987,Computer Science and Engineering Building,3115,210 - Research Laboratory / Studio (S),224,4.0,False,80.32
+1988,Computer Science and Engineering Building,3116,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1989,Computer Science and Engineering Building,3118,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1990,Computer Science and Engineering Building,3119,250 - Scholarly Activity (S),675,12.0,False,100.5
+1991,Computer Science and Engineering Building,3120,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+1992,Computer Science and Engineering Building,3123,210 - Research Laboratory / Studio (S),131,1.0,False,33.58
+1993,Computer Science and Engineering Building,3126,310 - Academic Office - Enclosed (S),138,1.0,False,13.28
+1994,Computer Science and Engineering Building,3127,210 - Research Laboratory / Studio (S),192,4.0,False,74.56
+1995,Computer Science and Engineering Building,3127,210 - Research Laboratory / Studio (S),192,4.0,False,74.56
+1996,Computer Science and Engineering Building,3127,210 - Research Laboratory / Studio (S),192,4.0,False,74.56
+1997,Computer Science and Engineering Building,3127,210 - Research Laboratory / Studio (S),192,4.0,False,74.56
+1998,Computer Science and Engineering Building,3134,310 - Academic Office - Enclosed (S),142,1.0,False,13.52
+1999,Computer Science and Engineering Building,3205,210 - Research Laboratory / Studio (S),154,1.0,False,37.72
+2000,Computer Science and Engineering Building,3206,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2001,Computer Science and Engineering Building,3210,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2002,Computer Science and Engineering Building,3212,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2003,Computer Science and Engineering Building,3213,250 - Scholarly Activity (S),552,10.0,False,83.12
+2004,Computer Science and Engineering Building,3214,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2005,Computer Science and Engineering Building,3216,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2006,Computer Science and Engineering Building,3217,340 - Conference Room (S),353,14.0,False,126.18
+2007,Computer Science and Engineering Building,3218,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2008,Computer Science and Engineering Building,3219,210 - Research Laboratory / Studio (S),567,7.0,False,172.06
+2009,Computer Science and Engineering Building,3219,210 - Research Laboratory / Studio (S),569,7.0,False,172.42000000000004
+2010,Computer Science and Engineering Building,3222,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2011,Computer Science and Engineering Building,3224,310 - Academic Office - Enclosed (S),136,0.68,True,11.56
+2012,Computer Science and Engineering Building,3228,310 - Academic Office - Enclosed (S),132,1.0,False,12.92
+2013,Computer Science and Engineering Building,3238,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2014,Computer Science and Engineering Building,3248,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2015,Computer Science and Engineering Building,3140,211 - Research Office - Enclosed (S),872,12.0,False,112.32
+2016,Computer Science and Engineering Building,3142,211 - Research Office - Enclosed (S),488,7.0,False,64.28
+2017,Computer Science and Engineering Building,3144,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2018,Computer Science and Engineering Building,3146,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2019,Computer Science and Engineering Building,3148,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2020,Computer Science and Engineering Building,3150,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2021,Computer Science and Engineering Building,3152,211 - Research Office - Enclosed (S),372,6.0,False,52.32
+2022,Computer Science and Engineering Building,3230,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2023,Computer Science and Engineering Building,3232,211 - Research Office - Enclosed (S),388,7.0,False,58.28
+2024,Computer Science and Engineering Building,3240,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2025,Computer Science and Engineering Building,3242,211 - Research Office - Enclosed (S),388,7.0,False,58.28
+2026,Computer Science and Engineering Building,3250,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2027,Computer Science and Engineering Building,3252,211 - Research Office - Enclosed (S),383,5.0,False,47.98
+2028,Computer Science and Engineering Building,3254,211 - Research Office - Enclosed (S),431,6.0,False,55.86
+2029,Computer Science and Engineering Building,3256,211 - Research Office - Enclosed (S),431,6.0,False,55.86
+2030,Computer Science and Engineering Building,3258,211 - Research Office - Enclosed (S),450,6.0,False,57.0
+2031,Computer Science and Engineering Building,3260,211 - Research Office - Enclosed (S),437,6.0,False,56.22
+2032,Computer Science and Engineering Building,3262,211 - Research Office - Enclosed (S),439,6.0,False,56.34
+2033,Computer Science and Engineering Building,3122,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+2034,Computer Science and Engineering Building,3124,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+2035,Computer Science and Engineering Building,3138,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2036,Computer Science and Engineering Building,3244,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2037,Computer Science and Engineering Building,3132,310 - Academic Office - Enclosed (S),135,2.0,False,18.1
+2038,Computer Science and Engineering Building,3202,310 - Academic Office - Enclosed (S),143,2.0,False,18.58
+2039,Computer Science and Engineering Building,3128,310 - Academic Office - Enclosed (S),133,2.0,False,17.98
+2040,Computer Science and Engineering Building,3130,310 - Academic Office - Enclosed (S),149,1.0,False,13.94
+2041,Computer Science and Engineering Building,3204,310 - Academic Office - Enclosed (S),133,1.0,False,12.98
+2042,Computer Science and Engineering Building,3208,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+2043,Computer Science and Engineering Building,3234,310 - Academic Office - Enclosed (S),135,2.0,False,18.1
+2044,Computer Science and Engineering Building,3236,310 - Academic Office - Enclosed (S),129,2.0,False,17.74
+2045,Computer Science and Engineering Building,3220,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+2046,Computer Science and Engineering Building,3226,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+2047,Computer Science and Engineering Building,3246,310 - Academic Office - Enclosed (S),129,2.0,False,17.74
+2048,Computer Science and Engineering Building,4102,310 - Academic Office - Enclosed (S),139,1.0,False,13.34
+2049,Computer Science and Engineering Building,4104,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2050,Computer Science and Engineering Building,4106,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2051,Computer Science and Engineering Building,4108,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2052,Computer Science and Engineering Building,4109,340 - Conference Room (S),345,14.0,False,125.7
+2053,Computer Science and Engineering Building,4110,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2054,Computer Science and Engineering Building,4111,210 - Research Laboratory / Studio (S),133,2.0,False,43.94
+2055,Computer Science and Engineering Building,4112,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2056,Computer Science and Engineering Building,4113,210 - Research Laboratory / Studio (S),134,2.0,False,44.12
+2057,Computer Science and Engineering Building,4114,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2058,Computer Science and Engineering Building,4118,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2059,Computer Science and Engineering Building,4120,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2060,Computer Science and Engineering Building,4122,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+2061,Computer Science and Engineering Building,4123,210 - Research Laboratory / Studio (S),131,1.0,False,33.58
+2062,Computer Science and Engineering Building,4126,310 - Academic Office - Enclosed (S),138,1.0,False,13.28
+2063,Computer Science and Engineering Building,4127,210 - Research Laboratory / Studio (S),767,8.0,False,218.06
+2064,Computer Science and Engineering Building,4130,310 - Academic Office - Enclosed (S),149,1.0,False,13.94
+2065,Computer Science and Engineering Building,4138,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2066,Computer Science and Engineering Building,4140,340 - Conference Room (S),872,50.0,False,427.32
+2067,Computer Science and Engineering Building,4206,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2068,Computer Science and Engineering Building,4209,210 - Research Laboratory / Studio (S),134,1.0,False,34.12
+2069,Computer Science and Engineering Building,4210,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2070,Computer Science and Engineering Building,4212,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2071,Computer Science and Engineering Building,4214,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2072,Computer Science and Engineering Building,4216,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2073,Computer Science and Engineering Building,4217,340 - Conference Room (S),353,14.0,False,126.18
+2074,Computer Science and Engineering Building,4218,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2075,Computer Science and Engineering Building,4219,210 - Research Laboratory / Studio (S),241,2.0,False,63.38
+2076,Computer Science and Engineering Building,4220,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2077,Computer Science and Engineering Building,4221,210 - Research Laboratory / Studio (S),134,4.0,False,64.12
+2078,Computer Science and Engineering Building,4223,210 - Research Laboratory / Studio (S),533,2.0,False,115.94
+2079,Computer Science and Engineering Building,4228,310 - Academic Office - Enclosed (S),131,1.0,False,12.86
+2080,Computer Science and Engineering Building,4234,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2081,Computer Science and Engineering Building,4236,310 - Academic Office - Enclosed (S),129,1.0,False,12.739999999999998
+2082,Computer Science and Engineering Building,4238,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2083,Computer Science and Engineering Building,4244,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2084,Computer Science and Engineering Building,4246,310 - Academic Office - Enclosed (S),129,1.0,False,12.739999999999998
+2085,Computer Science and Engineering Building,4248,310 - Academic Office - Enclosed (S),135,1.0,False,13.1
+2086,Computer Science and Engineering Building,4258,340 - Conference Room (S),384,28.0,False,233.04
+2087,Computer Science and Engineering Building,4262,340 - Conference Room (S),393,14.0,False,128.57999999999998
+2088,Computer Science and Engineering Building,4226,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+2089,Computer Science and Engineering Building,4142,211 - Research Office - Enclosed (S),488,7.0,False,64.28
+2090,Computer Science and Engineering Building,4144,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2091,Computer Science and Engineering Building,4146,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2092,Computer Science and Engineering Building,4148,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2093,Computer Science and Engineering Building,4150,211 - Research Office - Enclosed (S),459,7.0,False,62.54
+2094,Computer Science and Engineering Building,4152,211 - Research Office - Enclosed (S),228,3.0,False,28.68
+2095,Computer Science and Engineering Building,4154,211 - Research Office - Enclosed (S),687,9.0,False,86.22
+2096,Computer Science and Engineering Building,4230,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2097,Computer Science and Engineering Building,4232,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2098,Computer Science and Engineering Building,4240,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2099,Computer Science and Engineering Building,4242,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2100,Computer Science and Engineering Building,4250,211 - Research Office - Enclosed (S),388,6.0,False,53.28
+2101,Computer Science and Engineering Building,4252,211 - Research Office - Enclosed (S),383,6.0,False,52.98
+2102,Computer Science and Engineering Building,4254,211 - Research Office - Enclosed (S),431,6.0,False,55.86
+2103,Computer Science and Engineering Building,4256,211 - Research Office - Enclosed (S),431,6.0,False,55.86
+2104,Computer Science and Engineering Building,4116,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2105,Computer Science and Engineering Building,4134,310 - Academic Office - Enclosed (S),142,1.0,False,13.52
+2106,Computer Science and Engineering Building,4115,210 - Research Laboratory / Studio (S),227,5.675,True,97.61
+2107,Computer Science and Engineering Building,4119,250 - Scholarly Activity (S),630,22.0,False,147.8
+2108,Computer Science and Engineering Building,4224,310 - Academic Office - Enclosed (S),136,2.0,False,18.16
+2109,Computer Science and Engineering Building,4202,310 - Academic Office - Enclosed (S),143,2.0,False,18.58
+2110,Computer Science and Engineering Building,4213,250 - Scholarly Activity (S),552,11.0,False,88.12
+2111,Computer Science and Engineering Building,4208,310 - Academic Office - Enclosed (S),136,1.0,False,13.16
+2112,Computer Science and Engineering Building,4204,310 - Academic Office - Enclosed (S),134,1.0,False,13.04
+2113,Computer Science and Engineering Building,4124,310 - Academic Office - Enclosed (S),134,2.0,False,18.04
+2114,Computer Science and Engineering Building,4128,310 - Academic Office - Enclosed (S),133,2.0,False,17.98
+2115,Computer Science and Engineering Building,4132,310 - Academic Office - Enclosed (S),135,2.0,False,18.1
+2116,Computer Science and Engineering Building,4136,310 - Academic Office - Enclosed (S),133,2.0,False,17.98
+2117,Center Hall,101,110 - Classroom (S),3428,295.0,False,2418.18
+2118,Center Hall,105,110 - Classroom (S),1622,146.0,False,1192.32
+2119,Center Hall,109,110 - Classroom (S),1644,147.0,False,1201.14
+2120,Center Hall,113,110 - Classroom (S),1619,146.0,False,1192.14
+2121,Center Hall,115,110 - Classroom (S),2143,196.0,False,1598.58
+2122,Center Hall,119,110 - Classroom (S),2144,196.0,False,1598.64
+2123,Center Hall,201,110 - Classroom (S),454,30.0,False,252.24
+2124,Center Hall,202,110 - Classroom (S),255,15.0,False,127.8
+2125,Center Hall,203,110 - Classroom (S),409,32.0,False,264.54
+2126,Center Hall,204,110 - Classroom (S),316,16.0,False,138.96
+2127,Center Hall,205,110 - Classroom (S),500,30.0,False,255.0
+2128,Center Hall,206,110 - Classroom (S),316,16.0,False,138.96
+2129,Center Hall,207,110 - Classroom (S),415,32.0,False,264.9
+2130,Center Hall,208,110 - Classroom (S),257,15.0,False,127.92
+2131,Center Hall,212,110 - Classroom (S),1774,146.0,False,1201.44
+2132,Center Hall,214,110 - Classroom (S),1773,146.0,False,1201.38
+2133,Center Hall,216,110 - Classroom (S),1776,146.0,False,1201.56
+2134,Center Hall,217A,110 - Classroom (S),482,35.0,False,291.42
+2135,Center Hall,217B,110 - Classroom (S),424,35.0,False,287.94
+2136,Center Hall,218,110 - Classroom (S),463,32.0,False,267.78
+2137,Center Hall,220,110 - Classroom (S),408,32.0,False,264.48
+2138,Center Hall,222,110 - Classroom (S),813,65.0,False,536.28
+2139,Center Hall,223,110 - Classroom (S),323,15.0,False,131.88
+2140,Center Hall,224A,110 - Classroom (S),278,15.0,False,129.18
+2141,Center Hall,224B,110 - Classroom (S),364,15.0,False,134.34
+2142,Center Hall,224C,110 - Classroom (S),294,15.0,False,130.14
+2143,Center Hall,301,320 - Administrative Office - Enclosed (S),161,1.0,False,14.66
+2144,Center Hall,302,340 - Conference Room (S),140,4.0,False,38.4
+2145,Center Hall,303,320 - Administrative Office - Enclosed (S),106,1.0,False,11.36
+2146,Center Hall,304,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
+2147,Center Hall,305,320 - Administrative Office - Enclosed (S),188,1.0,False,16.28
+2148,Center Hall,306,340 - Conference Room (S),324,18.0,False,154.44
+2149,Center Hall,309A,320 - Administrative Office - Enclosed (S),66,1.0,False,8.96
+2150,Center Hall,310,320 - Administrative Office - Enclosed (S),188,1.0,False,16.28
+2151,Center Hall,311,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
+2152,Center Hall,312,320 - Administrative Office - Enclosed (S),106,1.0,False,11.36
+2153,Center Hall,315,340 - Conference Room (S),1146,26.0,False,263.76
+2154,Center Hall,316,470 - Tutorial / Training Room (N),540,25.0,False,219.9
+2155,Center Hall,317,320 - Administrative Office - Enclosed (S),121,1.0,False,12.26
+2156,Center Hall,318,470 - Tutorial / Training Room (N),65,2.0,False,18.9
+2157,Center Hall,319,320 - Administrative Office - Enclosed (S),99,1.0,False,10.94
+2158,Center Hall,320,340 - Conference Room (S),72,1.0,False,11.82
+2159,Center Hall,321,470 - Tutorial / Training Room (N),77,3.0,False,27.12
+2160,Center Hall,322,470 - Tutorial / Training Room (N),77,3.0,False,27.12
+2161,Center Hall,323,470 - Tutorial / Training Room (N),72,1.0,False,11.82
+2162,Center Hall,324,320 - Administrative Office - Enclosed (S),92,1.0,False,10.52
+2163,Center Hall,325,320 - Administrative Office - Enclosed (S),72,1.0,False,9.32
+2164,Center Hall,326,320 - Administrative Office - Enclosed (S),77,1.0,False,9.62
+2165,Center Hall,327,320 - Administrative Office - Enclosed (S),77,1.0,False,9.62
+2166,Center Hall,328,320 - Administrative Office - Enclosed (S),155,1.0,False,14.3
+2167,Center Hall,329,320 - Administrative Office - Enclosed (S),120,0.6,True,10.2
+2168,Center Hall,330,470 - Tutorial / Training Room (N),185,12.0,False,101.1
+2169,Center Hall,331,320 - Administrative Office - Open (S),59,0.295,True,5.015
+2170,Center Hall,333,340 - Conference Room (S),489,45.0,False,366.84
+2171,Center Hall,334,340 - Conference Room (S),122,6.0,False,52.32
+2172,Center Hall,335,340 - Conference Room (S),99,6.0,False,50.94
+2173,Center Hall,339,340 - Conference Room (S),367,35.0,False,284.52
+2174,Center Hall,344,320 - Administrative Office - Enclosed (S),95,1.0,False,10.7
+2175,Center Hall,346,320 - Administrative Office - Enclosed (S),101,1.0,False,11.06
+2176,Center Hall,348,320 - Administrative Office - Enclosed (S),175,1.0,False,15.5
+2177,Center Hall,349,320 - Administrative Office - Enclosed (S),101,1.0,False,11.06
+2178,Center Hall,350,320 - Administrative Office - Enclosed (S),95,1.0,False,10.7
+2179,Center Hall,351,320 - Administrative Office - Enclosed (S),187,0.935,True,15.895
+2180,Center Hall,354,320 - Administrative Office - Enclosed (S),134,1.0,False,13.04
+2181,Center Hall,356,340 - Conference Room (S),360,25.0,False,209.1
+2182,Center Hall,357,320 - Administrative Office - Enclosed (S),108,1.0,False,11.48
+2183,Center Hall,359,320 - Administrative Office - Enclosed (S),75,1.0,False,9.5
+2184,Center Hall,360,340 - Conference Room (S),195,15.0,False,124.2
+2185,Center Hall,361,340 - Conference Room (S),380,25.0,False,210.3
+2186,Center Hall,362,340 - Conference Room (S),65,3.0,False,26.4
+2187,Center Hall,364,340 - Conference Room (S),73,3.0,False,26.88
+2188,Center Hall,365,340 - Conference Room (S),70,3.0,False,26.7
+2189,Center Hall,366,340 - Conference Room (S),65,3.0,False,26.4
+2190,Center Hall,367,340 - Conference Room (S),74,3.0,False,26.94
+2191,Center Hall,368,340 - Conference Room (S),356,25.0,False,208.86
+2192,Center Hall,369,320 - Administrative Office - Enclosed (S),76,1.0,False,9.56
+2193,Center Hall,370,320 - Administrative Office - Enclosed (S),108,1.0,False,11.48
+2194,Center Hall,371,320 - Administrative Office - Enclosed (S),131,1.0,False,12.86
+2195,Center Hall,373,320 - Administrative Office - Enclosed (S),91,2.0,False,15.46
+2196,Center Hall,374,340 - Conference Room (S),81,4.0,False,34.86
+2197,Center Hall,375,340 - Conference Room (S),72,4.0,False,34.32
+2198,Center Hall,376,320 - Administrative Office - Enclosed (S),103,2.0,False,16.18
+2199,Center Hall,377,340 - Conference Room (S),108,1.0,False,13.98
+2200,Center Hall,378,340 - Conference Room (S),195,15.0,False,124.2
+2201,Center Hall,382A,320 - Administrative Office - Enclosed (S),82,0.41,True,6.9700000000000015
 38,Applied Physics and Mathematics,B301,560 - Media Production (S),172,1.0,False,30.64
 39,Applied Physics and Mathematics,B301A,560 - Media Production (S),335,8.375,True,123.94999999999999
 40,Applied Physics and Mathematics,B301B,560 - Media Production (S),194,4.8500000000000005,True,71.78
