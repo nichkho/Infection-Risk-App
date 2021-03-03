@@ -1,4 +1,5 @@
 var = {
+"infection_rate" = 0.0075,
 "wet_asl_d": 5,
 "virus_life": 1.7,
 "hi_viral_load": 500000000,

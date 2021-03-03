@@ -164,8 +164,7 @@ def infection_risk(t, room_id, n_occupants, activity, expiratory_activity, room_
     
     ##To calculate infection rate we will aggregate the past week of testing for UC San Diego (last updated: 12/10/20)
     #Source: https://returntolearn.ucsd.edu/dashboard/index.html
-    infection_rate = (2 + 11 + 10+ 3 + 7 + 10 + 12 + 5)/(20 + 1385 + 1375 + 286 + 1332 + 1414 + 944 + 1244)
-    n_infected = infection_rate * n_occupants # probability of getting infected given number of occupants
+    n_infected = var['infection_rate'] * n_occupants # probability of getting infected given number of occupants
     #if n_infected < 1:
         #n_infected = 1
     #Infectious virus removal rate
