@@ -24,7 +24,7 @@ var = {
 "virus_life": 1.7,
 "hi_viral_load": 500000000,
 "si_viral_load": 5000000000,
-"deposition_prob": 0.5, "infection_risk": 0.0075
+"deposition_prob": 0.5, "infection_risk": 0.0075, 
 "cv": 1e9,
 "ci": 0.02,
 "mask_efficacy": {".8μm": 0.3,"1.8μm": 0.5, "3.5μm": 0.7, "5.5μm": 0.8},
