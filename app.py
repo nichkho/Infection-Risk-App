@@ -102,7 +102,7 @@ app.layout = html.Div([
                                                                'margin': '10px'})]), 
         html.Div(id = "updated_rooms"),  
         html.Br(), 
-        html.Div("It is strongly suggested to remove your custom rooms before leaving the website. ")
+        html.Div("It is strongly suggested to remove your custom rooms before leaving the website. "), 
         html.Button("Remove Custom Rooms", id = "remove_rooms", n_clicks = 0), 
         html.Div(id = "removed_rooms"), 
     ]), 
