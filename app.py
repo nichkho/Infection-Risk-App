@@ -61,10 +61,13 @@ app.layout = html.Div([
     html.Br(),
     html.Div(["VAV Level: ", dcc.Dropdown(id='vav-dropdown')]),
     html.Br(), 
-    html.Div(["VAV Value: ", dcc.Input(id = "vav-value", value = 0, type = "text")]), 
+    html.Br(), ##
+    html.Div(["VAV Value: ", dcc.Input(id = "vav-value", value = 0, type = "text"), " CFM. "]), 
     html.Br(),
-    html.Div(["Duration of Event (min): ",
-              dcc.Input(id='time-input', value = 0, type='number')]),
+    html.Div(["Air Purifier: ", dcc.Input(id = "air", value = 0, type = "number"), " CFM. "]), 
+    html.Br(), 
+    html.Div(["Duration of Event : ",
+              dcc.Input(id='time-input', value = 0, type='number'), " Minutes. "]), 
     html.Br(),
     html.Div(["Number of Occupants: ",
               dcc.Input(id='occupant-input', value = 0, type='number')]),
@@ -205,7 +208,7 @@ def update_date_dropdown(name):
 )
 def update_vav(vselect, building_id, roomid): 
     if vselect in ["min", "max", "median", "recommended"]: 
-        return get_vav(rid_path, building_id, roomid, vselect)
+        return get_vav(rid_path, building_id, roomid, vselect, 0)
     else: 
         return 0
 
@@ -217,19 +220,22 @@ def update_vav(vselect, building_id, roomid):
     [dash.dependencies.Input('room-dropdown', 'value')],
     [dash.dependencies.Input('vav-dropdown', 'value')], 
     [dash.dependencies.Input('vav-value', 'value')], 
+    
+    
+    [dash.dependencies.Input('air', 'value')], 
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')]
 )
-def update_calc(n_clicks, building_input, activity_dropdown, room_input,vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
+def update_calc(n_clicks, building_input, activity_dropdown, room_input,vav_dropdown, vav_value, air, mask_tf, time_input, occupant_input):
     if n_clicks >= 1: 
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
-                comp_ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
+                comp_ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, air, vav_value)
         else:           
-            comp_ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+            comp_ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, air, vav_dropdown)
         total_inf = int(occupant_input * comp_ir)
         to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
                                                                                                                                 time_input, 
@@ -238,6 +244,9 @@ def update_calc(n_clicks, building_input, activity_dropdown, room_input,vav_drop
                                                                                                                                 occupant_input,
                                                                                                                                 total_inf)
         return to_return
+   
+
+
     else:
         return 'Enter Values to get risk calculation' 
    
@@ -250,22 +259,24 @@ def update_calc(n_clicks, building_input, activity_dropdown, room_input,vav_drop
     [dash.dependencies.Input('room-dropdown', 'value')],
     [dash.dependencies.Input('vav-dropdown', 'value')], 
     [dash.dependencies.Input('vav-value', 'value')],  
+    
+    [dash.dependencies.Input('air', 'value')], 
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')])
-def reval(n_clicks, building_input, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
+def reval(n_clicks, building_input, activity_dropdown, room_input, vav_dropdown, vav_value, air, mask_tf, time_input, occupant_input):
     if n_clicks >= 1: 
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
-                ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
-                vav = get_vav(rid_path, building_input, room_input, vav_value)
+                ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, air, vav_value)
+                vav = get_vav(rid_path, building_input, room_input, vav_value, 0)
         else: 
-            ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
-            vav = get_vav(rid_path, building_input, room_input, vav_dropdown)
+            ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, air, vav_dropdown)
+            vav = get_vav(rid_path, building_input, room_input, vav_dropdown, 0)
         results = str({"act": activity_dropdown, "building": building_input, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
-                      "vav": vav, "ir": round((ir * 100),2)})
+                      "vav": vav, "air_purifier": air, "ir": round((ir * 100),2)})
         return results
     return ""
 
