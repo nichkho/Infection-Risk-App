@@ -203,7 +203,7 @@ def update_date_dropdown(name):
 )
 def update_vav(vselect, building_id, roomid): 
     if vselect in ["min", "max", "average"]: 
-        return get_vav(data_path + rid_path, building_id, roomid, vselect)
+        return get_vav(rid_path, building_id, roomid, vselect)
     else: 
         return 0
 
@@ -224,9 +224,9 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, vav_value,
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
-                comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_value)
+                comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
         else:           
-            comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_dropdown)
+            comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
         total_inf = int(occupant_input * comp_ir)
         to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
                                                                                                                                 time_input, 
@@ -255,11 +255,11 @@ def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
-                ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_value)
-                vav = get_vav(data_path + rid_path, room_input, vav_value)
+                ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
+                vav = get_vav(rid_path, room_input, vav_value)
         else: 
-            ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, data_path + rid_path, vav_dropdown)
-            vav = get_vav(data_path + rid_path, room_input, vav_dropdown)
+            ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+            vav = get_vav(rid_path, room_input, vav_dropdown)
         results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
                       "vav": vav, "ir": round((ir * 100),2)})
         return results
