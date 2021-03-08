@@ -202,7 +202,7 @@ def update_date_dropdown(name):
     [dash.dependencies.Input('room-dropdown', 'value')]
 )
 def update_vav(vselect, building_id, roomid): 
-    if vselect in ["min", "max", "median"]: 
+    if vselect in ["min", "max", "median", "recommended"]: 
         return get_vav(rid_path, building_id, roomid, vselect)
     else: 
         return 0
