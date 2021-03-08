@@ -153,7 +153,7 @@ def update_custom_rooms(contents, filename, fs):
         data = pd.read_csv("rm.csv")
         data = data.append(newdata)
         data.to_csv("rm.csv", index = False)
-        return "Custom Rooms " + str(list(data["Building"].unique())) + " Updated! "
+        return "Custom Rooms " + str(list(newdata["Building"].unique())) + " Updated! "
     else: 
         return "Nothing Updated. "
 
