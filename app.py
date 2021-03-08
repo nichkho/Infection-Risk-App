@@ -210,6 +210,7 @@ def update_vav(vselect, building_id, roomid):
 @app.callback(
     dash.dependencies.Output('calc-output', 'children'),
     [dash.dependencies.Input('go-button', 'n_clicks')],
+    [dash.dependencies.Input('building-dropdown', 'value')], 
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
     [dash.dependencies.Input('vav-dropdown', 'value')], 
@@ -218,15 +219,15 @@ def update_vav(vselect, building_id, roomid):
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')]
 )
-def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
+def update_calc(n_clicks, building_input, activity_dropdown, room_input,vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
     if n_clicks >= 1: 
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
-                comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
+                comp_ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
         else:           
-            comp_ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+            comp_ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
         total_inf = int(occupant_input * comp_ir)
         to_return = 'The risk of an individual infected because of holding a(n) {} event for {} minutes in {} is {}%, given the most recent infection rates. With {} occupants, it is likely that {} occupant(s) will be infected.'.format(activity_dropdown, 
                                                                                                                                 time_input, 
@@ -242,6 +243,7 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, vav_value,
 @app.callback(
     dash.dependencies.Output('return_value', 'children'),
     [dash.dependencies.Input('go-button', 'n_clicks')], 
+    [dash.dependencies.Input('building-dropdown', 'value')], 
     [dash.dependencies.Input('activity-dropdown', 'value')],
     [dash.dependencies.Input('room-dropdown', 'value')],
     [dash.dependencies.Input('vav-dropdown', 'value')], 
@@ -249,17 +251,17 @@ def update_calc(n_clicks, activity_dropdown, room_input,vav_dropdown, vav_value,
     [dash.dependencies.Input('masks-radio', 'value')],
     [dash.dependencies.State('time-input', 'value')],
     [dash.dependencies.State('occupant-input', 'value')])
-def reval(n_clicks, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
+def reval(n_clicks, building_input, activity_dropdown, room_input, vav_dropdown, vav_value, mask_tf, time_input, occupant_input):
     if n_clicks >= 1: 
         if vav_dropdown == "custom": 
             if (vav_value is None) or (vav_value == ""):
                 return
             else: 
-                ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
-                vav = get_vav(rid_path, room_input, vav_value)
+                ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_value)
+                vav = get_vav(rid_path, building_input, room_input, vav_value)
         else: 
-            ir = ui_calc(activity_dropdown, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
-            vav = get_vav(rid_path, room_input, vav_dropdown)
+            ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
+            vav = get_vav(rid_path, building_input, room_input, vav_dropdown)
         results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
                       "vav": vav, "ir": round((ir * 100),2)})
         return results
@@ -272,9 +274,6 @@ def cross_domain(n_clicks):
     if n_clicks >= 1: 
         return "message()"
     return "console.log(0)"
-
-
-   
 
 
 if __name__ == '__main__':
