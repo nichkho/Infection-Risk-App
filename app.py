@@ -157,7 +157,7 @@ def update_custom_rooms(contents, filename, fs):
         data.to_csv("rm.csv", index = False)
         return "Custom Rooms " + str(list(newdata["Building"].unique())) + " Updated! "
     else: 
-        return "Nothing Updated. "
+        return "Nothing Uploaded. "
 
 @app.callback(
     dash.dependencies.Output('building-dropdown', 'options'), 
@@ -264,7 +264,7 @@ def reval(n_clicks, building_input, activity_dropdown, room_input, vav_dropdown,
         else: 
             ir = ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, vav_dropdown)
             vav = get_vav(rid_path, building_input, room_input, vav_dropdown)
-        results = str({"act": activity_dropdown, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
+        results = str({"act": activity_dropdown, "building": building_input, "rm": room_input, "ti": time_input, "occupants": occupant_input, "masks": mask_tf, 
                       "vav": vav, "ir": round((ir * 100),2)})
         return results
     return ""
