@@ -95,12 +95,10 @@ def get_room_data(filepath, building_id, room_id):
     #CFM range. If no CFM is provided min is chosen by default
     cfm_min = room_table.loc[room_table['Room'] == room_id]['VAVmin'].item()
     cfm_max = room_table.loc[room_table['Room'] == room_id]['VAVmax'].item()
-    
+    cfm_recommended = room_table.loc[room_table['Room'] == room_id]['VAVrecommended'].item()
     room_dic["cfm_min"] = float(cfm_min)
-    
+    room_dic["cfm_recommended"] = float(cfm_recommended)
     room_dic["cfm_max"] = float(cfm_max)
-    
-    #Windows
     
     
     #V is volume of room
@@ -242,11 +240,15 @@ def get_vav(room_data_path, building_id, room_id, cfm):
     elif cfm == "median":
         cfm = (room_dic["cfm_max"] + room_dic["cfm_min"]) / 2 
               
-    elif cfm == "recommended"
-        cfm = room_dic["cfm_min"]
-       
-       
-       
+    elif cfm == "recommended": 
+        
+        if room_dic["cfm_recommended"] is not None: 
+            cfm = room_dic["cfm_recommended"]
+        
+        
+        
+        else: 
+            cfm = "unavailable"       
     else: 
         cfm = float(cfm)
     return cfm
