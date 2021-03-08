@@ -1,7 +1,7 @@
 var = {
  #Infection Rate
  #Source: https://returntolearn.ucsd.edu/dashboard/index.html
-"infection_rate" = 0.0075,
+"infection_rate" : 0.0075,
 "virus_life": 1.7,
 "hi_viral_load": 500000000,
 "si_viral_load": 5000000000,
