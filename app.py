@@ -47,7 +47,7 @@ data = pd.DataFrame()
 
 
 
-data_table = pd.DataFrame(["Name of Building", "Room Name", "Area of Room", "Height of Room", "Minimum VAV (cfm)", "Maximum VAV (cfm)", "ASHRAE Recommended VAV"], 
+data_table = pd.DataFrame(["Name of Building", "Room Name", "Area of Room (m2)", "Height of Room (ft)", "Minimum VAV (cfm)", "Maximum VAV (cfm)", "ASHRAE Recommended VAV"], 
                           ["Building", "Room", "Area", "Height", "VAVmin", "VAVmax", "VAVrecommended"]).transpose()
 
 data = pd.DataFrame()
