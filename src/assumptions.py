@@ -2,10 +2,6 @@ var = {
  #Infection Rate
  #Source: https://returntolearn.ucsd.edu/dashboard/index.html
 "infection_rate" : 0.0075,
-"virus_life": 1.7,
-"hi_viral_load": 500000000,
-"si_viral_load": 5000000000,
-"deposition_prob": 0.5,
 #Viral Load in the Sputum
 #Source: https://doi.org/10.1186/s13054-020-02893-8
 "cv": 1e9,
