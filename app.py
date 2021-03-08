@@ -89,6 +89,8 @@ app.layout = html.Div([
     html.Br(), 
     html.Div(id = 'return_value'), 
     html.Br(), 
+    html.H5("Advanced Information"), 
+    html.Br(), 
     html.Details(children = [
         html.Summary("Add Custom Rooms"), 
         html.Div("You can upload your custom rooms files using the given format: "), 
