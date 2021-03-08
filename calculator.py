@@ -69,8 +69,8 @@ def get_air_changes_per_hour(cfm, room_volume):
         print('VAV unknown. Imputed with arbitrary VAV of 800 CFM')
         cfm = 800
     elif cfm == 0:
-        #Natural ACH of .15 if CFM is off provided
-        return .15
+        # It's nearly impossible but we add it anyways 
+        return 0
     # if CFM is provided
     return (cfm * 60) / room_volume
 
