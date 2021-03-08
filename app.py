@@ -192,7 +192,7 @@ def update_rooms(building):
     [dash.dependencies.Input('room-dropdown', 'value')]
 )
 def update_date_dropdown(name):
-    return [{'label': 'Min', 'value': "min"}, {'label': 'Average', 'value': "average"}, 
+    return [{'label': 'Min', 'value': "min"}, {'label': 'Median', 'value': "median"}, 
             {'label': 'Max', 'value': "max"}, {"label": "Custom", "value": "custom"}]
 
 @app.callback(
@@ -202,7 +202,7 @@ def update_date_dropdown(name):
     [dash.dependencies.Input('room-dropdown', 'value')]
 )
 def update_vav(vselect, building_id, roomid): 
-    if vselect in ["min", "max", "average"]: 
+    if vselect in ["min", "max", "median"]: 
         return get_vav(rid_path, building_id, roomid, vselect)
     else: 
         return 0
