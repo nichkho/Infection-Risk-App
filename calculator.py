@@ -101,7 +101,7 @@ def get_room_data(filepath, building_id, room_id):
     room_dic["cfm_max"] = float(cfm_max)
     
     #Windows
-    room_dic['windows'] = room_table.loc[room_table['Room'] == room_id]['Windows'].item()
+    
     
     #V is volume of room
     room_dic['room_volume'] = room_dic['room_area'] * room_hght
