@@ -239,8 +239,11 @@ def get_vav(room_data_path, building_id, room_id, cfm):
     elif cfm == "min":
         cfm = room_dic["cfm_min"]
         
-    elif cfm == "average":
+    elif cfm == "median":
         cfm = (room_dic["cfm_max"] + room_dic["cfm_min"]) / 2 
+              
+    elif cfm == "Ashrae Recommended"
+        cfm = room_dic["cfm_min"]
     else: 
         cfm = float(cfm)
     return cfm
