@@ -64,7 +64,7 @@ app.layout = html.Div([
     html.Br(), ##
     html.Div(["VAV Value: ", dcc.Input(id = "vav-value", value = 0, type = "text"), " CFM. "]), 
     
-    html.Div("A value of -1 indicates the VAV of given option is unavailable, please select "custom" and input custom VAV or select "recommended" and use recommended VAV instead. ")
+    html.Div("A value of -1 indicates the VAV of given option is unavailable, please select "custom" and input custom VAV or select "recommended" and use recommended VAV instead. "), 
     html.Br(),
     html.Div(["Air Purifier: ", dcc.Input(id = "air", value = 0, type = "number"), " CFM. "]), 
     html.Br(), 
