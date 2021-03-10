@@ -131,7 +131,7 @@ def get_quanta_emmission_rate(activity, expiratory_activity, mask_tf, var = var)
     return var['cv'] * var['ci'] * (var['IR'][activity] * CUBIC_M_TO_ML) * summation
       
 #Infection Risk Calculator
-def infection_risk(t, building_id, room_id, n_occupants, activity, expiratory_activity, room_data_path, mask_tf, cfm, air, var = var):
+def infection_risk(t, building_id, room_id, n_occupants, activity, expiratory_activity, room_data_path, mask_tf, cfm, var = var):
     ERq = get_quanta_emmission_rate(activity, expiratory_activity, mask_tf)
     room_dic = get_room_data(room_data_path, building_id, room_id)
     
@@ -149,7 +149,7 @@ def infection_risk(t, building_id, room_id, n_occupants, activity, expiratory_ac
     
     
     #Air Changes per Hour
-    cfm = get_vav(room_data_path, building_id, room_id, cfm, air)
+    cfm = get_vav(room_data_path, building_id, room_id, cfm)
     air_change_rate = get_air_changes_per_hour(cfm, room_dic['room_volume'])
     
     
@@ -177,7 +177,7 @@ def infection_risk(t, building_id, room_id, n_occupants, activity, expiratory_ac
     return risk
 
 #For user interface
-def ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, air, cfm_max = "max"):
+def ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_input, mask_tf, rid_path, cfm_max = "max"):
     
     
     
@@ -196,8 +196,8 @@ def ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_
         #The expiratory action is assumed to be 
         exp_act1 = 'whispering'
         exp_act2 = 'speaking'
-        ir1 = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max, air)
-        ir2 = infection_risk(time_input, building_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf, cfm_max, air)
+        ir1 = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
+        ir2 = infection_risk(time_input, building_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf, cfm_max)
         total_ir  = (ir1 + ir2) / 2
     elif activity_dropdown == 'Studying':
         print("studying")
@@ -206,30 +206,30 @@ def ui_calc(activity_dropdown, building_input, room_input, time_input, occupant_
         act2 = 'standing'
         exp_act1 = 'speaking'
         exp_act2 = 'whispering'
-        ir1 = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max, air)
-        ir2 = infection_risk(time_input, building_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf, cfm_max, air)
+        ir1 = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
+        ir2 = infection_risk(time_input, building_input, room_input, occupant_input, act2, exp_act2, rid_path, mask_tf, cfm_max)
         total_ir  = (ir1 + ir2) / 2
     elif activity_dropdown == 'Singing':
         print("singing")
         #Simulate singing by assuming occupants are singing and standing
         act1 = 'standing'
         exp_act1 = 'singing'
-        total_ir = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max, air)
+        total_ir = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
     elif activity_dropdown == 'Social':
         print("social")
         #Simulate singing by assuming occupants are doing light exercise and talking
         act1 = 'light_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max, air)
+        total_ir = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
     else:
         #Simulate singing by assuming occupants are doing heavy exercise and talking
         print("else")
         act1 = 'heavy_exercise'
         exp_act1 = 'speaking'
-        total_ir = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max, air)
+        total_ir = infection_risk(time_input, building_input, room_input, occupant_input, act1, exp_act1, rid_path, mask_tf, cfm_max)
     return total_ir
 
-def get_vav(room_data_path, building_id, room_id, cfm, air): 
+def get_vav(room_data_path, building_id, room_id, cfm): 
     room_dic = get_room_data(room_data_path, building_id, room_id)
         
     if cfm == "max":
@@ -248,7 +248,7 @@ def get_vav(room_data_path, building_id, room_id, cfm, air):
         
         
         else: 
-            cfm = 0 
+            cfm = "unavailable"
     else: 
         cfm = float(cfm)
-    return cfm + air
+    return cfm
