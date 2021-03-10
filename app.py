@@ -197,8 +197,8 @@ def update_rooms(building):
     [dash.dependencies.Input('room-dropdown', 'value')]
 )
 def update_date_dropdown(name):
-    return [{'label': 'Min', 'value': "min"}, {'label': 'Median', 'value': "median"}, 
-            {'label': 'Max', 'value': "max"}, {"label": "ASHRAE Recommended Minimum", "value": "recommended"}, {"label": "Custom", "value": "custom"}]
+    return [{"label": "Custom", "value": "custom"}, {"label": "ASHRAE Recommended Minimum", "value": "recommended"}, 
+            {'label': 'Max', 'value': "max"},{'label': 'Min', 'value': "min"}, {'label': 'Median', 'value': "median"}]
 
 @app.callback(
     dash.dependencies.Output('vav-value', 'value'),
