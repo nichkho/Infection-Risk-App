@@ -369,5 +369,13 @@ def cross_domain(n_clicks):
     if n_clicks >= 1: 
         return "message()"
     return "console.log(0)" 
-if __name__ == "__main__": 
-    app.run_server(debug = True)) 
+
+
+
+
+
+if __name__ == '__main__':
+    app.run_server(debug = True)
+
+    
+    
