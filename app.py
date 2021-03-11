@@ -9,6 +9,8 @@ import os
 import dash_table
 import base64
 import io
+import json
+import ast
 from calculator import *
 
 
@@ -116,8 +118,86 @@ app.layout = html.Div([
     html.Br(), 
     html.Details(children = [
         html.Summary("Modify Assumptions"), 
+        html.Div(["Please read Important Assumptions before editing these assumptions. ", 
+                 "Infection Rate could vary from region to region so we include input boxes for you to quickly modify it. ", 
+                 "Other assumptions tend not to vary in different regions and they are selected based on our researches. ", 
+                 "If you want to modify them anyway, please download the ", 
+                 html.A("assumptions file", href = "assumptions.txt", download = "assumptions.txt"),  
+                 ". You can modify the downloaded file using Notepad. ", 
+                 "After modifying you can upload it to our application. "]), 
+        html.Br(), 
+        html.Div("Please Click Go Again to Get Updated Estimations After Any Modification. "), 
+        html.Br(), 
+        html.Div(["Infection Rate: ", dcc.Input(id = 'infection_rt', value = assumptions.var["infection_rate"], type='number')]), 
+        html.Div(id = "update_rt"), 
+        html.Br(), 
+        html.Div("Other Advanced Assumptions"), 
+        html.Br(), 
+        html.Div(["Upload Your Assumptions Files: ", dcc.Upload(id = 'updated', 
+                                                      children = html.Div(['Drag and Drop or ', html.A('Select Files')]), 
+                                                      style = {'width': '100%','height': '60px','lineHeight': '60px','borderWidth': 
+                                                               '1px','borderStyle': 'dashed','borderRadius': '5px','textAlign': 'center',
+                                                               'margin': '10px'})]), 
+        html.Div(id = "updated_assumptions"), 
+        html.Br(), 
+        html.Button("Remove Custom Assumptions", id = "remove_assumptions", n_clicks = 0), 
+        html.Div(id = "rm_assumptions"), 
+        
     ])
 ])
+@app.callback(
+    dash.dependencies.Output('rm_assumptions', 'children'), 
+    dash.dependencies.Input('remove_assumptions', 'n_clicks'))
+def remove_custom_rooms(n_clicks): 
+    if n_clicks >= 1: 
+        with open("assumptions_original.txt") as fs: 
+
+            readata = fs.read() 
+    
+        newdata = ast.literal_eval(readata)
+        newdata["infection_rate"] = 0.0075
+        newvar = assumptions.var
+        for i in newvar: 
+            newvar[i] = newdata[i]
+        update_var(newvar)
+        return "Custom Assumptions Removed!" 
+
+@app.callback(
+    dash.dependencies.Output("update_rt", "children"), 
+    dash.dependencies.Input('infection_rt', 'value')) 
+def update_infection(rt): 
+    newvar = assumptions.var
+    newvar["infection_rate"] = rt
+    update_var(newvar)
+    return "Current Infection Rate: " + str(rt)
+
+
+
+
+@app.callback(
+    dash.dependencies.Output('updated_assumptions', 'children'), 
+    dash.dependencies.Input('updated', 'contents'), 
+    dash.dependencies.Input('infection_rt', 'value'), 
+    dash.dependencies.State('updated', 'filename'),
+    dash.dependencies.State('updated', 'last_modified')) 
+def update_custom_assumptions(contents, infection_rt, filename, fs): 
+    print("content clicked")
+    if contents is not None: 
+        with open(filename) as fs: 
+
+            readata = fs.read() 
+    
+        newdata = ast.literal_eval(readata)
+        newdata["infection_rate"] = infection_rt 
+        newvar = assumptions.var
+        for i in newvar: 
+            newvar[i] = newdata[i]
+        update_var(newvar)
+        return "Custom Assumptions " + str(var) + " Updated! " 
+    else: 
+        return "Current Assumptions: " + str(var)
+
+
 
 def parse_contents(contents, filename, date):
     content_type, content_string = contents.split(',')
@@ -157,7 +237,7 @@ def update_custom_rooms(contents, filename, fs):
     if contents is not None: 
         print("content inputed")
         newdata = parse_contents(contents, filename, fs)
-        data = pd.read_csv("rm.csv")
+        data = pd.read_csv("rm.csv") 
         data = data.append(newdata)
         data.to_csv("rm.csv", index = False)
         return "Custom Rooms " + str(list(newdata["Building"].unique())) + " Updated! "
@@ -288,20 +368,6 @@ def reval(n_clicks, building_input, activity_dropdown, room_input, vav_dropdown,
 def cross_domain(n_clicks): 
     if n_clicks >= 1: 
         return "message()"
-    return "console.log(0)"
-
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
+    return "console.log(0)" 
+if __name__ == "__main__": 
+    app.run_server(debug = True)) 
