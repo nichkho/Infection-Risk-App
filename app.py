@@ -66,7 +66,7 @@ app.layout = html.Div([
     html.Br(), 
     html.Div(["VAV Value: ", dcc.Input(id = "vav-value", value = 0, type = "text"), " CFM. "]), 
     
-    html.Div("A value of -1 indicates the VAV of given option is unavailable, please select 'custom' and input custom VAV or select 'recommended' and use recommended VAV instead. "), 
+    html.Div(id = "vavnotice"), 
     html.Br(),
     html.Div(["Air Purifier: ", dcc.Input(id = "air", value = 0, type = "number"), " CFM. "]), 
     html.Br(), 
@@ -142,9 +142,19 @@ app.layout = html.Div([
         html.Br(), 
         html.Button("Remove Custom Assumptions", id = "remove_assumptions", n_clicks = 0), 
         html.Div(id = "rm_assumptions"), 
-        
     ])
 ])
+
+
+
+@app.callback(
+    dash.dependencies.Output('vavnotice', 'children'), 
+    dash.dependencies.Input('vav-value', "value"))
+def notice(value): 
+    if value == -1: 
+        return "A value of -1 indicates the VAV of given option is unavailable, please select 'custom' and input custom VAV or select 'recommended' and use recommended VAV instead. "
+    else: 
+        return "" 
 @app.callback(
     dash.dependencies.Output('rm_assumptions', 'children'), 
     dash.dependencies.Input('remove_assumptions', 'n_clicks'))
