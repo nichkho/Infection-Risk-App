@@ -104,7 +104,7 @@ app.layout = html.Div([
         dash_table.DataTable(columns = [{"name": i, "id": i} for i in data_table.columns], 
                             data = data_table.to_dict("records")), 
         
-        html.Div(["Sample Files can be downloaded: ", html.A("click", href = "custom_rooms.csv", download = "custom_rooms.csv")]), 
+        html.Div(["Sample Files can be downloaded in How to Use -> Advanced Modification"]), 
         html.Div(["Upload Custom Files: ", dcc.Upload(id = 'upload-data', 
                                                       children = html.Div(['Drag and Drop or ', html.A('Select Files')]), 
                                                       style = {'width': '100%','height': '60px','lineHeight': '60px','borderWidth': 
@@ -122,8 +122,8 @@ app.layout = html.Div([
         html.Div(["Please read Important Assumptions before editing these assumptions. ", 
                  "Infection Rate could vary from region to region so we include input boxes for you to quickly modify it. ", 
                  "Other assumptions tend not to vary in different regions and they are selected based on our researches. ", 
-                 "If you want to modify them anyway, please download the ", 
-                 html.A("assumptions file", href = "assumptions.txt", download = "assumptions.txt"),  
+                 "If you want to modify them anyway, please download the assumptions files in How to Use -> Advanced Modification", 
+                  
                  ". You can modify the downloaded file using Notepad. ", 
                  "After modifying you can upload it to our application. "]), 
         html.Br(), 
