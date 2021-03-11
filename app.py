@@ -103,7 +103,8 @@ app.layout = html.Div([
         html.Div("You can upload your custom rooms files using the given format: "), 
         dash_table.DataTable(columns = [{"name": i, "id": i} for i in data_table.columns], 
                             data = data_table.to_dict("records")), 
-        html.Div(["Sample Files can be found in the section above. "]), 
+        
+        html.Div(["Sample Files can be downloaded: ", html.A("click", href = "custom_rooms.csv", download = "custom_rooms.csv")], ". Area is in squared meters, Height is in feets"), 
         html.Div(["Upload Custom Files: ", dcc.Upload(id = 'upload-data', 
                                                       children = html.Div(['Drag and Drop or ', html.A('Select Files')]), 
                                                       style = {'width': '100%','height': '60px','lineHeight': '60px','borderWidth': 
