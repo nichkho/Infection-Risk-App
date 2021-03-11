@@ -127,7 +127,7 @@ app.layout = html.Div([
                  ". You can modify the downloaded file using Notepad. ", 
                  "After modifying you can upload it to our application. "]), 
         html.Br(), 
-        html.Div("Please Click Go Again to Get Updated Estimations After Any Modification. "), 
+        html.Div("Please click the button Go again to update the estimation after any modification. "), 
         html.Br(), 
         html.Div(["Infection Rate: ", dcc.Input(id = 'infection_rt', value = assumptions.var["infection_rate"], type='number')]), 
         html.Div(id = "update_rt"), 
